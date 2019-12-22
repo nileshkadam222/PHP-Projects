@@ -1,0 +1,109 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="User_Masterpage.master.cs" Inherits="User_Masterpage" %>
+
+<%@ Register assembly="FlashControl" namespace="Bewise.Web.UI.WebControls" tagprefix="Bewise" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+</head>
+<body >
+            
+    <form id="form1" runat="server">
+            
+    <table border="1" cellpadding="2" cellspacing="0" align="center" height="1055" 
+        width="800" >
+        
+        <%--flash banner--%>
+        <tr height="70">
+        <td colspan ="2" width="800"  bgcolor="Black" >
+            <Bewise:FlashControl ID="FlashControl1" runat="server" Height="70px" 
+                Loop="True" MovieUrl="~/flash new/1234.swf" Width="800px" />
+        </td>
+        </tr>
+        
+        <%--banner picture--%>
+        <tr height="170">
+        <td colspan ="2" width="800"  bgcolor="Black">
+            <asp:Image ID="Image1" runat="server" Height="170px" 
+                ImageUrl="~/Image/LogoFinal.jpg" Width="800px" />
+            </td>
+        </tr>
+        
+        <%--braking news--%>
+        <tr height="30">
+        <td colspan ="2" width="800"  bgcolor="Black">
+        
+        <marquee> 
+        
+        <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1">
+            <ItemTemplate>
+                <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Names="Calibri" 
+                 Font-Size="X-Large" ForeColor="Yellow" Text='<%# Eval("News_Desc") %>'>
+                 </asp:Label>
+            </ItemTemplate>
+        </asp:DataList></marquee>
+        
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
+            SelectCommand="SELECT News_Desc FROM News_Master WHERE (News_Id IN (SELECT MAX(News_Id) 
+            AS Expr1 FROM News_Master AS News_Master_1))">
+        </asp:SqlDataSource>
+        </td>
+        </tr>
+        
+        <%--menuuuuuuuu--%>
+        <tr height="70">
+        <td colspan ="2" width="800" valign="top" >
+        
+        
+        </td>
+        </tr>
+        
+        
+        
+        
+        <%--customear support--%>
+        <tr>
+        <td width =170 height =100 align="center" bgcolor="Black" >
+            <asp:Label ID="Label1" runat="server" Text="Customer Support" Font-Bold="True" 
+                Font-Italic="False" Font-Names="Cambria" Font-Size="Large" ForeColor="#FF9900" 
+                Width="168px"></asp:Label>
+            
+            <br />
+            <asp:Label ID="Label3" runat="server" Font-Bold="True" ForeColor="#FF9900" 
+                Text="+91 9427354140"></asp:Label>
+            
+        </td>
+       <%-- mainnnnnnn--%>
+        <td width =630 height =700 rowspan="2" valign="top">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+        
+       
+        <tr>
+        <td width="170" height ="600" valign="top" bgcolor="Black" > 
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+        </td>
+    
+        
+        </tr>
+        
+        <tr height="15">
+        <td colspan ="2" width="800" 
+                style="color: #FFFFFF; background-color: #000000; font-weight: bold;" >Copyright &copy 2009-2010 VIP Airlines. All Rights Reserved. Designed by 
+            <asp:HyperLink ID="HyperLink1" runat="server" 
+                NavigateUrl="http://www.rajpatelmyself.com" ForeColor="Yellow">Raj Patel</asp:HyperLink>.</td>
+        </tr>
+    </table>   
+    </form>    
+</body>
+</html>
+

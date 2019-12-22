@@ -1,0 +1,10 @@
+D:\School\ASPX\Bin\DAL.dll
+D:\School\ASPX\Bin\DAL.pdb
+D:\School\API\BLL\DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\School\API\BLL\DAL\obj\Debug\DAL.dll
+D:\School\API\BLL\DAL\obj\Debug\DAL.pdb
+D:\School\API\API\DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\School\ASPX\School\Bin\DAL.dll
+D:\School\ASPX\School\Bin\DAL.pdb
+D:\School\API\API\DAL\obj\Debug\DAL.dll
+D:\School\API\API\DAL\obj\Debug\DAL.pdb

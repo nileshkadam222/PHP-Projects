@@ -1,0 +1,210 @@
+/* creating database 'complaints' */
+create database complaints
+-----------------------------------------------------------------------------
+use complaints
+-----------------------------------------------------------------------------
+/* users table creation */
+create table complaints_users_tb(
+	user_id varchar(4) constraint pk_users_user_id primary key,
+	passwd varchar(12))
+
+insert into complaints_users_tb values('101','S000101')
+insert into complaints_users_tb values('102','S000102')
+insert into complaints_users_tb values('10','M000010')
+insert into complaints_users_tb values('20','M000020')
+
+--select * from complaints_users_tb
+--delete from complaints_users_tb
+--drop table complaints_users_tb
+------------------------------------------------------------------------------
+/* consumers (complaint givers) table creation */
+create table complaints_consumers_tb(
+	meter_num varchar(7) constraint pk_consumers_meter_num primary key,
+	name varchar(15),
+	phone_num varchar(12),
+	area varchar(10),
+	city varchar(12),
+	state varchar(12))
+
+--select * from complaints_consumers_tb
+--delete from complaints_consumers_tb
+--drop table complaints_consumers_tb
+-----------------------------------------------------------------------------
+
+/* linmen table creation */
+create table complaints_linemen_tb(
+	lineman_num varchar(4) constraint pk_linemen_lineman_num primary key,
+	l_name varchar(15),
+	incentive_earned varchar(6),
+	status varchar(12) default 'AVAILABLE')
+insert into complaints_linemen_tb(lineman_num,l_name,incentive_earned) 
+values('1000','Nagaraj','0')
+insert into complaints_linemen_tb(lineman_num,l_name,incentive_earned) 
+values('1001','Kishore','0')
+insert into complaints_linemen_tb(lineman_num,l_name,incentive_earned) 
+values('1002','Jagadish','0')
+insert into complaints_linemen_tb(lineman_num,l_name,incentive_earned) 
+values('1003','Pavan','0')
+insert into complaints_linemen_tb(lineman_num,l_name,incentive_earned) 
+values('1004','Ram','0')
+
+--select * from complaints_linemen_tb
+--update complaints_linemen_tb set status='AVAILABLE' where 
+lineman_num='1001'
+--update complaints_linemen_tb set incentive_earned='0'
+--drop table complaints_linemen_tb
+--delete from complaints_linemen_tb
+
+------------------------------------------------------------------------------
+
+/* new (complaints storer) table creation */
+create table complaints_new_tb(
+	ref_num varchar(6) constraint pk_new_ref_num primary key,
+	given_date varchar(10),
+	given_time varchar(8),
+	nature varchar(50),
+	falut_at varchar(14) default 'pole',
+	consumer_num varchar(7) constraint fk_new_consumers foreign key 
+references 
+		complaints_consumers_tb(meter_num),
+	user_id varchar(4) constraint fk_new_users foreign key references 
+		complaints_users_tb(user_id))
+
+--select * from complaints_new_tb
+--drop table complaints_new_tb
+--delete from complaints_new_tb
+--update complaints_new_tb set falut_at='SUB-STATION' where 
+falut_at='sub-station'
+
+--------------------------------------------------------------------------------
+
+/* close_list table creation */
+create table complaints_close_list_tb(
+	ref_num varchar(6) constraint fk_close_list_new foreign key references 
+		complaints_new_tb(ref_num), 
+	close_date varchar(10),
+	close_time varchar(8),
+	time_taken_in_hrs varchar(3),
+	constraint un_close_list_ref_num unique(ref_num))
+
+--select * from complaints_close_list_tb
+--drop table complaints_close_list_tb
+--delete from complaints_close_list_tb where ref_num=11
+--------------------------------------------------------------------------------
+
+/* assignment table creation */
+create table complaints_assignment_tb(
+	ref_num varchar(6) constraint fk_assignment_new foreign key references 
+		complaints_new_tb(ref_num),
+	assign_date varchar(10),
+	lineman_num varchar(4) constraint fk_assignment_linemen foreign key 
+references 
+		complaints_linemen_tb(lineman_num),
+	delay_reason varchar(35), 
+	status varchar(8),
+	constraint un_assignment_ref_num unique(ref_num))
+
+--select * from complaints_assignment_tb
+--drop table complaints_assignment_tb
+--delete from complaints_assignment_tb where ref_num=15
+--update complaints_assignment_tb set status='ALLOTTED' where 
+ref_num='11'
+-----------------------------------------------------------------------------------
+select * from complaints_users_tb
+select * from complaints_consumers_tb
+select * from complaints_linemen_tb
+select * from complaints_assignment_tb
+select * from complaints_close_list_tb
+select * from complaints_new_tb
+
+----------------------------------------------------------------------------------
+/* view for report generation to JE/ADE/DE */
+create view complaints_report_mgr_vw
+as
+select distinct new.ref_num,
+	consumers.name as [Consumer Name],
+	new.nature as [Complaint Nature],new.given_date as [Given 
+Date],new.given_time as [Given Time],
+	closed.close_date as [Closed Date],closed.close_time as [Closed Time], 
+	assign.lineman_num as [Lineman Number],assign.status as [Complaint 
+Status] ,assign.delay_reason as [Reason for Delay]
+ from  	complaints_consumers_tb consumers,
+	complaints_new_tb new,
+	complaints_close_list_tb closed, 
+	complaints_assignment_tb assign 
+where 	new.consumer_num=consumers.meter_num and 
+	assign.ref_num=new.ref_num and 
+	( closed.ref_num=new.ref_num or assign.status='PENDING' or 
+assign.status='ALLOTTED') 
+
+--select * from complaints_report_mgr_vw
+--drop view complaints_report_mgr_vw
+------------------------------------------------------------------------------------
+
+/*view for report generation to staff */ 
+create view complaints_report_staff_vw 
+as
+select distinct new.ref_num,
+	consumers.name as [Consumer Name],
+	new.nature as [Complaint Nature],new.given_date as [Given 
+Date],new.given_time as [Given Time],
+	closed.close_date as [Closed Date],closed.close_time as [Closed Time], 
+	assign.lineman_num as [Lineman Number],assign.status as [Complaint 
+Status] ,assign.delay_reason as [Reason for Delay],
+	users.user_id as [staff_id]
+from  	complaints_consumers_tb consumers,
+	complaints_new_tb new,
+	complaints_close_list_tb closed, 
+	complaints_assignment_tb assign,
+	complaints_users_tb users 
+where 	new.consumer_num=consumers.meter_num and 
+	assign.ref_num=new.ref_num and 
+	users.user_id=new.user_id and
+	( closed.ref_num=new.ref_num or assign.status in 
+('PENDING','ALLOTTED')) 
+	
+
+--select * from complaints_report_staff_vw
+--drop view complaints_report_staff_vw
+------------------------------------------------------------------------------------
+
+/* validateDates procedure creation */
+alter procedure complaints_validateDates_proc(@date1 datetime,@date2 
+datetime,@res int output)as
+begin
+declare @res1 int
+set @res1= (select datediff(day,@date1,@date2))
+set @res=@res1
+end
+
+--declare @r int 
+--execute complaints_validateDates_proc '2007-02-10','2007-02-10',@r 
+output
+--select @r
+-------------------------------------------------------------------------------------
+
+/* validateDatesWithTimes procedure creation */
+alter procedure complaints_validateDatesWithTimes_proc(@date1 
+datetime,@date2 datetime,@res int output)as
+begin
+declare @res1 int
+set @res1= (select datediff(mi,@date1,@date2))
+set @res=@res1
+end
+
+--declare @r int 
+execute complaints_validateDatesWithTimes_proc '2007-02-12 
+04:30','2007-02-12 05:15',@r output
+select @r
+--------------------------------------------------------------------------------------
+
+
+/*create table demo(time_ varchar(10))
+insert into demo values(substring(cast(getdate()as varchar),13,20))
+select * from demo
+drop table demo
+use pubs
+select DATEDIFF(day,02/10/2007, getdate())
+select substring(cast(getdate()as varchar),1,10)
+select getdate()*/
+

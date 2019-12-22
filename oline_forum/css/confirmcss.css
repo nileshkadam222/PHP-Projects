@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+
+#dialogoverlay{
+display: none;
+opacity: .8;
+position: fixed;
+top: 0px;
+left: 0px;
+background: #FFF;
+width: 100%;
+z-index: 10;
+}
+.tonton button{
+	margin:4px;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-right:19px;
+	padding-left:19px;
+	background:#9C0;
+	border-radius:5px;}
+
+.tonton button:hover{
+	margin:4px;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-right:19px;
+	padding-left:19px;
+	background:#663;
+	color:#DDD;}
+	.tonton a{
+	color:black;
+	text-decoration:none;
+	font-size:14px;
+	border:2px inset #DDD;
+	margin:4px;
+	padding-top:7px;
+	padding-bottom:9px;
+	padding-right:19px;
+	padding-left:19px;
+	background:#9C0;
+	border-radius:5px;}
+
+.tonton a:hover{
+	margin:4px;
+	color:#DDD;
+	padding-top:9px;
+	padding-bottom:9px;
+	padding-right:19px;
+	padding-left:19px;
+	background:#663;}
+#dialogbox{
+display: none;
+position: fixed;
+background:#990;
+border-radius:7px;
+width:550px;
+z-index: 10;
+}
+#dialogbox > div
+{ background:#FFF;
+margin:8px; }
+#dialogbox > div > #dialogboxhead{ 
+background:#CC0; font-size:15px;
+padding:8px; color:#100; font-family:"Comic Sans MS", cursive; }
+#dialogbox > div > #dialogboxbody{ background:#9F3; padding:30px;font-size:19px;
+padding:8px; color:#100; font-family:Arial, Helvetica, sans-serif;}
+#dialogbox > div > #dialogboxfoot{ background:#FF9; padding:1px; text-align:right;}

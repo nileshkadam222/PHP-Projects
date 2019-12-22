@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="students_MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>MCQ ONLINE EXAM</title>
+    <link rel="favicon icon" href="../images/icon.jpg" />
+    <link href="../include/StyleSheet.css" type="text/css" rel="Stylesheet" />
+    <script type="text/javascript" src="../include/JScript.js"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+   <table border="0px"  cellspacing="0" width="100%" > 
+            <tr class="tdbackgroungimage">
+                 <td  >
+                    <table width="100%" >
+                        <tr >
+                            <td  class="tdright">
+                                <asp:Label ID="lbluser" CssClass="email" runat="server"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:ImageButton 
+                                    ID="imgout" runat="server" ImageUrl="~/images/switchofficon.png" Height="22px" 
+                                    onclick="imgout_Click" Width="51px" /> &nbsp;&nbsp;&nbsp; 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td   class="logo">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:Image ID="txtlogo" runat="server" ImageUrl="~/images/onlinelogo.png" />
+                                &nbsp;
+                           </td>
+                        </tr>
+                        <tr>
+                            <td class="tdright menu" >
+                                <a href="Default.aspx" >Home</a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <a href="examconfig.aspx">Exam Now</a>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <a href="result.aspx">Exam Result</a>&nbsp;&nbsp;&nbsp;<a href="changepassword.aspx">Change Password</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                     <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                    
+                     </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            
+     </table>
+    </form>
+</body>
+</html>

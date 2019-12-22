@@ -1,0 +1,10 @@
+<?
+session_start();
+$_SESSION["sess_id2"]="0";
+$_SESSION["sess_name2"]="";
+unset($_SESSION);
+$_SESSION[]=array();
+session_destroy();
+header("Location:index.php?loginresult=logout");
+exit();
+?>

@@ -1,0 +1,159 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Home.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="wrapper">
+        <div id="logo">
+            <h1>
+                <a href="Home.aspx">
+                    <asp:Image ID="Image3" runat="server" Width="150px" height="80px" 
+                    ImageUrl="~/images/mobileshop_logo_1.jpg"/></a>
+            </h1>
+            <p></p>
+        
+        </div>
+        <hr />
+        <!-- end #logo -->
+        <div id="header">
+            <div id="menu">
+                <ul>
+                    <li class="current_page_item"><a href="Home.aspx" class="first">HOME</a></li>
+                    <li><a href="Product.aspx">PRODUCT</a></li>
+                    <li><a href="Branch.aspx">BRANCH</a></li>
+                    <li><a href="Aboutus.aspx">ABOUT US</a></li>
+                    <li><a href="Award.aspx">AWARD</a></li>
+                    <li><a href="Contactus.aspx">CONTACT US</a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+            <!-- end #menu -->
+            <div id="search">
+            </div>
+        </div>
+        <!-- end #search -->
+    </div>
+    <!-- end #header -->
+    <!-- end #header-wrapper -->
+    <div id="page">
+        <div id="page-bgtop">
+            <div id="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    
+                     <table border="1" bgcolor="#FFFFCC" >
+        <asp:Repeater ID="rptid" runat="server">
+            <ItemTemplate>
+                <tr>
+                    
+                        <%#DataBinder.Eval(Container.DataItem, "Category_id")%>
+                    </td>
+                    <td>
+                        <%#DataBinder.Eval(Container.DataItem,"product_name")%>
+                    </td>
+                    <td align="center">
+                          <img alt="" width="40px" height="40px" style="cursor: pointer;" src="<%# GetUserImage(Eval("product_img").ToString())%>" />            
+                    </td>
+                    <td>
+                        <%#DataBinder.Eval(Container.DataItem,"product_price")%>
+                    </td>
+                    <td align="center">
+                        <%#DataBinder.Eval(Container.DataItem,"features")%>
+                    </td>
+                </tr>
+            </ItemTemplate>
+        </asp:Repeater>
+    </table>
+                </asp:ContentPlaceHolder>
+            </div>
+            <!-- end #content -->
+            <div id="sidebar">
+                <ul>
+                    <li>
+                        <h2 style="border: solid 2px; background-color: #41BAFC; color: #DF0C00;">
+                            &nbsp;&nbsp; Browse By Category</h2>
+                        <ul style="border: solid 1px; background-color: #9CDAFE;">
+                            <li style="font-size: small"><a href="MobileCategory.aspx?mobile_cat=smart_phone">Smart Phones</a></li>
+                            <li style="font-size: small"><a href="MobileCategory.aspx?mobile_cat=business_phone">Business Phones</a></li>
+                            <li style="font-size: small"><a href="MobileCategory.aspx?mobile_cat=fun_phone">Fun Phones</a></li>
+                            <li style="font-size: small"><a href="MobileCategory.aspx?mobile_cat=lifestyle_phone">Lifestyle Phones</a></li>
+                            <li style="font-size: small"><a href="MobileCategory.aspx?mobile_cat=value_phone">Value Phones</a></li>
+                            <li style="font-size: small"><a href="MobileCategory.aspx?mobile_cat=tablets">Tablets</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                            &nbsp;&nbsp; 
+                            <asp:Label ID="lblbrands" runat="server" Text="Brands" Font-Size="Large" 
+                                Font-Bold="True" ForeColor="Red" Font-Underline="True"></asp:Label>
+                              <p></p> <br />
+                        <p>
+                            <asp:DropDownList ID="ddl_brands" runat="server" AutoPostBack="True">
+                            </asp:DropDownList>
+                        </p>
+                        <br />
+                        <p>
+                            <center>
+                                <asp:Button ID="btnok" runat="server" Text="Ok" OnClick="btnok_Click" /></center>
+                        </p>
+                    </li>
+                    <asp:Image ID="Image1" runat="server" Height="166px" ImageUrl="~/images1/thumb03.jpg"
+                        Width="197px" />
+                    <li></li>
+                    <li>
+                        <h2 style="border: solid 2px; background-color: #41BAFC; color: #DF0C00;">
+                            &nbsp;&nbsp;&nbsp;&nbsp; Advance Search
+                        </h2>
+                        <ul style="border: solid 1px; background-color: #9CDAFE;">
+                            <li>&nbsp;&nbsp;
+                                <asp:RadioButton Font-Size="Small" ID="rdbrs1000" runat="server" Text="Rs. 1000-Rs. 5000"
+                                    GroupName="g1" /></li>
+                            <li>&nbsp;&nbsp;
+                                <asp:RadioButton Font-Size="Small" ID="rdbrs5000" runat="server" Text="Rs. 5000-Rs. 10,000"
+                                    GroupName="g1" />
+                            </li>
+                            <li>&nbsp;&nbsp;
+                                <asp:RadioButton Font-Size="Small" ID="rdbrs10000" runat="server" Text="Rs. 10,000-Rs. 15,000"
+                                    GroupName="g1" /></li>
+                            <li>&nbsp;&nbsp;
+                                <asp:RadioButton Font-Size="Small" ID="rdbrs15000" runat="server" Text="Rs. 15,000-RS. 20,000"
+                                    GroupName="g1" />
+                            </li>
+                            <li>&nbsp;&nbsp;
+                                <asp:RadioButton Font-Size="Small" ID="rdbrs20000" runat="server" Text="Rs. 20,000-Above" GroupName="g1" /></li>
+                    </li>
+                </ul>
+                <li>
+                    <center>
+                        <asp:Button ID="Button1" runat="server" Text="Ok" onclick="Button1_Click"/></center>
+                </li>
+                <li>
+                    <asp:Image ID="Image2" runat="server" Height="108px" ImageUrl="~/images1/Touch_apps_teaser_main.jpg"
+                        Width="200px" />
+                </li>
+                <ul>
+                </ul>
+            </div>
+            <!-- end #sidebar -->
+            <div style="clear: both;">
+                &nbsp;</div>
+        </div>
+    </div>
+    </form>
+    <!-- end #page -->
+    <div id="footer-bgcontent">
+        <div id="footer">
+            <p>
+                Kevin Butani,Pranav Pandya,Hardik Chhala Design by <a href="Home.aspx">home</a>.</p>
+        </div>
+    </div>
+    <!-- end #footer -->
+    </div> </form>
+</body>
+</html>

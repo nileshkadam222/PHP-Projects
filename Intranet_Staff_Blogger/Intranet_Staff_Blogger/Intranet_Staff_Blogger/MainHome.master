@@ -1,0 +1,304 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainHome.master.cs" Inherits="MainHome" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Education website</title>
+<meta name="description" content="Education website">
+<meta name="keywords" content="education, learning, teaching">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .style1
+        {
+            padding: 10px;
+            VERTICAL-ALIGN: top;
+            COLOR: #000000;
+            TEXT-ALIGN: justify;
+            width: 628px;
+        }
+        .style2
+        {
+            width: 427px;
+            height: 141px;
+        }
+        .style3
+        {
+            width: 200px;
+        }
+        .style4
+        {
+            width: 427px;
+            height: 147px;
+        }
+        .style5
+        {
+            height: 159px;
+            width: 427px;
+        }
+        .style6
+        {
+            height: 159px;
+            width: 200px;
+        }
+        .style7
+        {
+            height: 110px;
+            width: 157px;
+        }
+        .style8
+        {
+            width: 369px;
+        }
+        .style9
+        {
+            width: 381px;
+            height: 118px;
+        }
+        .style10
+        {
+            width: 369px;
+            height: 122px;
+        }
+        .style11
+        {
+            width: 385px;
+        }
+        .style12
+        {
+            width: 385px;
+            height: 137px;
+        }
+        .style13
+        {
+            width: 194px;
+        }
+        .style14
+        {
+            width: 194px;
+            height: 12px;
+        }
+        .style15
+        {
+            width: 157px;
+        }
+        .style16
+        {
+            width: 381px;
+        }
+    </style>
+</head>
+<form id="form1" runat="server">
+<body>
+<table width="100%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<td align="center" valign="top" bgcolor="#FFFFFF" class="bord-l">&nbsp;</td>
+<td width="760" align="center" valign="top"><table height="100%" border="0" 
+        cellpadding="0" cellspacing="0" style="width: 822px">
+<tr>
+<td height="1" valign="top" background="images/t1.gif" class="bgx"><img src="images/t1.gif" alt="" width="1" height="13"></td>
+</tr>
+<tr>
+<td height="1" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="1"><img src="images/ml.jpg" alt="" width="216" height="27"></td>
+<td background="images/menu-bg.gif" class="bgx"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td class="menu"><a href="#"class="menu_lnk">Home Page</a></td>
+<td width="1"><img src="images/menu-sep.gif" alt="" width="6" height="27"></td>
+<td class="menu"><a href="Aboutus.aspx" class="menu_lnk">About Us</a></td>
+<td width="1"><img src="images/menu-sep.gif" alt="" width="6" height="27"></td>
+
+
+<td class="menu"><a href="ContactUs.aspx" class="menu_lnk">Contact Us</a></td>
+<td width="1"><img src="images/menu-sep.gif" alt="" width="6" height="27"></td>
+<td class="menu"><a href="Login.aspx" class="menu_lnk">LogIn</a></td>
+<td width="100%" class="menu">&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td height="1" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="1"><img src="images/p1.jpg" alt="" width="280" height="145"></td>
+<td background="images/p-bg.jpg" class="bgx">&nbsp;</td>
+<td width="1" valign="top" background="images/p2.jpg" class="norepeat"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td><img src="images/spacer.gif" alt="" width="458" height="50"></td>
+</tr>
+<tr>
+<td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="1" class="logo"><img src="images/logo.gif" alt="" width="72" height="71"></td>
+<td class="c_name">Intranet Staff Blogger website</td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td height="10" valign="top" class="welcome">Welcome To Staff Blogger</td>
+
+</tr>
+<tr>
+<td height="100%" valign="top"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top" class="style1">
+
+<table>
+<tr>
+<td class="style3" rowspan="2" valign="top">
+ <table><tr><td class="style15">
+ <b>Events Calender</b>
+ </td></tr>
+ <tr>
+ <td class="style15">
+ <asp:Calendar ID="cEvents" runat="server" Width="191px" 
+         onselectionchanged="cEvents_SelectionChanged"></asp:Calendar>
+ </td>
+ </tr>
+ <tr>
+ <td class="style7">
+ <asp:GridView ID="gvEvents" runat="server" Width="188px"></asp:GridView>
+ </td></tr>
+ </table>
+ 
+ 
+</td>
+<td class="style2" valign="top">
+<table>
+<tr>
+<td class="style16">
+<b>
+    Birth Day Wishes</b>
+</td>
+
+</tr>
+<tr>
+<td class="style9">
+<asp:ContentPlaceHolder ID="cpBirthDayWishes" runat="server"></asp:ContentPlaceHolder>
+</td>
+</tr>
+<tr><td align="right">
+<a href="SpecialFeatures.aspx">More...</a>
+</td></tr>
+</table>
+</td>
+
+</tr>
+<tr>
+<td class="style4" valign="top">
+<table>
+<tr><td class="style8">
+<b>Faculty Offers</b>
+</td></tr>
+<tr>
+<td class="style10">
+<asp:ContentPlaceHolder ID="cpFacultyOffers" runat="server"></asp:ContentPlaceHolder>
+</td>
+</tr>
+<tr><td align="right">
+<a href="SpecialFeatures.aspx">More...</a>
+</td></tr>
+</table>
+</td>
+
+</tr>
+<tr>
+<td class="style6" valign="top">
+<table style="height: 158px"><tr><td class="style14">
+   <b> Gallery </b>
+    </td></tr>
+    <tr><td class="style13">
+   <asp:GridView ID="gvGallery" runat="server" Width="188px"></asp:GridView>
+    </td></tr>
+    <tr><td align="right">
+<a href="SpecialFeatures.aspx">More...
+</td></tr>
+    </table>
+    </td>
+<td class="style5" valign="top">
+<table><tr><td class="style11">
+
+
+   <b> HOD Talks </b>
+    </td></tr>
+    <tr><td class="style12">
+    <asp:ContentPlaceHolder ID="cHODTalks" runat="server"></asp:ContentPlaceHolder>
+    </td></tr>
+    <tr><td align="right">
+<a href="SpecialFeatures.aspx">More...</a>
+</td></tr>
+    </table>
+    </td>
+</tr>
+</table>
+</td>
+<td valign="top" bgcolor="#efefef">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td height="1"><img src="images/spacer.gif" alt="" width="222" height="10"></td>
+</tr>
+<tr>
+<td><div id="button">
+<table width="222px" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+
+<a href="SpecialFeatures.aspx">News &amp; Events</a>
+
+ </td>
+</tr>
+<tr>
+<td><a href="SpecialFeatures.aspx">Gallery </a> </td>
+</tr>
+<tr>
+<td><a href="SpecialFeatures.aspx">Staff Offers</a> </td>
+</tr>
+<tr>
+<td><a href="Login.aspx">Log In</a> </td>
+</tr>
+</table>
+
+
+</div></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+</tr>
+<tr>
+<td height="1" valign="top" background="images/b-bg.gif" bgcolor="#187d9f" class="bgx"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="1"><img src="images/b-bg.gif" alt="" width="1" height="62"></td>
+<td width="280" class="bottom_addr">Coign Consultancts Pvt Ltd.<br>
+    Phone: 040-66906107<br>
+    www.coign.net<br></td>
+<td class="bottom_menu"><a href="MainHome.aspx"class="bottom_lnk">Home Page</a> || <a href="Aboutus.aspx" bottom_lnk">
+    About Us</a> || <a href="ContactUs.aspx" class="bottom_lnk">Contact Us</a> || <a href="Login.aspx" class="bottom_lnk">
+    Log In</a></td>
+</tr>
+</table></td>
+</tr>
+</table></td>
+<td align="center" valign="top" class="bord-r">&nbsp;</td>
+</tr>
+</table>
+<div style="position:absolute;left:-30000px;top:-30000px"><a href="http://anvisionwebtemplates.com">
+    Website templates</a><a href="http://cityants.co.uk">Business directory UK</a><a href="http://cityants.net">Yellow 
+    pages US</a><a href="http://anvisionwebdesign.com">Website design company</a><a href="http://webdesignfinders.net">Web 
+    design directory</a><a href="http://australia.webdesignfinders.net">Web design 
+    directory Australia</a><a href="http://canada.webdesignfinders.net">Web design 
+    directory Canada</a><a href="http://anvisionwebtemplates.com/free-education-web-templates-layouts.html">Free 
+    education web templates</a></div>
+</body>
+</form>
+</html>

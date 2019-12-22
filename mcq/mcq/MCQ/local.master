@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="local.master.cs" Inherits="local" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>MCQ Online Test</title>
+    <link rel="favicon icon" href="images/icon.png" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link type="text/css" rel="Stylesheet" href="include/StyleSheet.css" />
+    <script type="text/javascript" src="include/JScript.js"></script>
+    
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table border="0px"  cellspacing="0" width="100%" > 
+            <tr class="tdbackgroungimage">
+                 <td  >
+                    <table width="100%" >
+                        <tr >
+                            <td  class="tdright">
+                                <a href="login.aspx">Login</a>&nbsp;&nbsp;&nbsp; <a href="registration.aspx">Registration</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td   class="logo">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:Image ID="txtlogo" runat="server" ImageUrl="~/images/onlinelogo.png" />
+                                &nbsp;
+                           </td>
+                        </tr>
+                        <tr>
+                            <td class="tdright menu" >
+                                <a href="Default.aspx" >Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="contact.aspx">Contact US</a>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <a href="about.aspx">Aboute US</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <a href="Feedback.aspx">FeedBack</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                     <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                    
+                     </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <br />
+                    <br />
+                    <a href="contact.aspx">Contact Us</a> || <a href="about.aspx" >About Us</a>
+                </td>
+            </tr>
+     </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,168 @@
+﻿body 
+{
+	background-color:#E2E2E2;
+}
+.butten 
+{
+	background-image:url('../images/butten.png');
+	background-repeat:repeat-x;
+	border-color:#FF6699;
+	border-style:dotted;
+	height:35px;
+	font-size:large;
+	font-weight:bold;
+	color:#FF3300;
+
+	
+	
+}
+fieldset
+{
+	border-color:#216F93; border-style:ridge;
+	border-radius: 10px 10px 10px 10px;
+}
+legend
+{
+	font-size:35px;
+	color:#216F93;
+	vertical-align:top;
+	height:70px
+}
+.lbl
+{
+	padding-left:40px;
+	color:#164490;
+	font-weight:bolder;
+	text-align:left;
+	
+	
+}
+.lbl1
+{
+	padding-left:40px;
+	color:Red;
+	font-weight:bolder;
+	text-align:left;
+	
+	
+}
+
+.textbox
+{
+	width:180px;
+	border-radius: 3px 3px 3px 3px;
+	 
+}
+.textboxexam
+{
+	width:90px;
+	border-radius: 3px 3px 3px 3px;
+	 
+}
+
+a
+{
+	color:Red;
+	 text-decoration:none;
+	font-size:20px;
+	font-family:@Meiryo;
+	
+}
+.email
+{
+	color:Red;
+	 text-decoration:none;
+	font-size:20px;
+	font-family:@Meiryo;
+	
+}
+H1
+{
+	color:Red;
+		
+	font-size:40px;
+	text-align:center;
+	
+}
+.detail
+{
+	color:#103C3A;
+	
+		
+	font-size:14px;
+	padding-left:40px;
+	text-transform:capitalize;
+}
+.tdright
+{
+	text-align:right;
+}
+.tdbackgroungimage
+{
+	
+	background-image:url('../images/image.jpg');
+	background-repeat:no-repeat;
+}
+.logo
+{
+	
+	vertical-align:bottom;
+	text-align:left;
+	height:100px;
+}
+.menu
+{
+	vertical-align:top;
+	height:60px;
+}
+
+.grdheader
+{
+ background-color:#C28043;
+ font-size:larger;
+ border-color:Black;
+ color:Maroon;
+ height:28px;
+}
+.grditem
+
+{
+	padding-left:5px;
+ background-color:#2BB9FB;
+ font-size:larger;
+ border-color:Black;
+ color:Maroon;
+ height:25px;
+ border-width:0.5px
+}
+.grdalter
+{
+	color:Aqua;
+	color:Red;
+}
+.updatelbl
+{
+	color:Black;
+	text-align:left;
+	vertical-align:top;
+	font-weight:bold;
+}
+.header
+{
+	background-color:#507CD1;
+	color: White;
+	font-weight:bold;
+	font-size:larger;
+}
+.item
+{
+	background-color:White;
+	color:Black;
+	font-size:14px;
+}
+.alter
+{
+	background-color:#E9ECFA;
+	color:Black;
+	font-size:14px;
+}

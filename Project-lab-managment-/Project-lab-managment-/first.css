@@ -1,0 +1,94 @@
+.main_menu
+{
+    height:30px;
+    line-height:30px;
+    color:#FFF;
+    position:relative;
+    font-size:14px;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0068ac;
+}
+.main_menu
+{
+    position:relative;
+    z-index:100;
+}
+.main_menu ul li a, .menu ul li a:visited
+{
+    display:compact;
+    text-decoration:none;
+    color:#FFFFFF;
+    width:109px;
+    height:30px;
+    text-align:center;
+    color:#fff;
+    line-height:30px;
+    overflow:hidden;
+}
+.main_menu ul
+{
+    padding:0;
+    margin:0;
+    list-style: none;
+}
+.main_menu ul li
+{
+    float:left;
+    position:relative;
+}
+.main_menu ul li ul
+{
+    display: none;
+}
+ 
+/* specific to non IE browsers */
+.main_menu ul li:hover a
+{
+    background:#3e941f;
+    color:#FFF;
+}
+.main_menu ul li:hover ul
+{
+    display:block;
+    position:absolute;
+    top:30px;
+    left:0;
+    width:169px;
+}
+.main_menu ul li:hover ul li ul
+{
+    display: none;
+}
+.main_menu ul li:hover ul
+{
+    background:#004376;
+    font-size:13px;
+}
+.main_menu ul li:hover ul a
+{
+    background:#004376;
+}
+.main_menu ul li:hover ul li a
+{
+    display:block;
+    color:#FFF;
+    width:149px;
+    text-align:left !important;
+    padding:0 10px;
+    height:24px;
+    line-height:24px;
+    margin:0 0 3px 0;
+    background-image:none !important;
+}
+.main_menu ul li:hover ul li a:hover
+{
+    color:#FFF;
+    background:#429a21 !important;
+}
+.main_menu ul li:hover ul li:hover ul
+{
+    display:block;
+    position:absolute;
+    left:105px;
+    top:0;
+}

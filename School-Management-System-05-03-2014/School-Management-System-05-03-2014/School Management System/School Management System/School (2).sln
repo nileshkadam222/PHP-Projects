@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "D:\...\School\", "School\ASPX\School\", "{24DA723F-ECA2-4D01-B532-64368CD55A33}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/School"
+		Debug.AspNetCompiler.PhysicalPath = "D:\School Management System\School\ASPX\School\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\School\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/School"
+		Release.AspNetCompiler.PhysicalPath = "D:\School Management System\School\ASPX\School\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\School\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "4481"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24DA723F-ECA2-4D01-B532-64368CD55A33}.Debug|.NET.ActiveCfg = Debug|.NET
+		{24DA723F-ECA2-4D01-B532-64368CD55A33}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

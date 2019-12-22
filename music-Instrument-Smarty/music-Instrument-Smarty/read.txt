@@ -1,0 +1,21 @@
+
+============================================================
+change the details of database host, username and password in
+
+cfg/connect.inc.php
+
+dont change admin login and password from this file..
+the default login for admin is
+
+username:admin
+password:admin
+
+if you want to change admin password then login in
+
+admin.php
+
+and then change password..
+============================================================
+
+You can add thumbnail of product also..
+manage and add new products by logging in admin..

@@ -1,0 +1,1036 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Courier New;}{\f1\fnil Courier New;}{\f2\fswiss\fcharset0 Arial;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;\red43\green145\blue175;\red128\green128\blue128;\red220\green20\blue20;\red255\green0\blue255;\red0\green128\blue0;}
+{\*\generator Msftedit 5.41.15.1507;}\viewkind4\uc1\pard\cf1\f0\fs24 create\cf2\f1  \cf1 proc\cf2  teacherupdation\par
+(\par
+\cf3 @id\cf2  \cf1 int\cf2 ,\par
+\cf3 @name\cf2  \cf1 varchar\cf2 (100),\par
+\cf3 @fathername\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @qualification\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @subject\cf2  \cf1 varchar\cf2 (30),\par
+\cf3 @dateofbirth\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @dateofjoining\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @email\cf2  \cf1 varchar\cf2 (60),\par
+\cf3 @contactno\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @address\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @errormessage\cf2  \cf1 varchar\cf2 (100) \cf1 output\cf2\par
+\par
+)\par
+\cf1 as\cf2  \cf1 begin\cf2  \par
+\par
+\cf1 if\cf2 (\cf3 @id\cf2  \cf4 >\cf2 0)\par
+\cf1 begin\cf2\par
+\par
+\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  email \cf1 from\cf2  teacherregistration \cf1 where\cf2  email\cf4 =\cf3 @email\cf2  \cf4 and\cf2  id\cf4 <>\cf3 @id\cf2 )\par
+\cf1 update\cf2  teacherregistration \cf1 set\cf2  name\cf4 =\cf3 @name\cf2 ,fathername\cf4 =\cf3 @fathername\cf2 ,dateofbirth\cf4 =\cf3 @dateofbirth\cf2 ,dateofjoining\cf4 =\cf3 @dateofjoining\cf2 ,subject\cf4 =\cf3 @subject\cf2 ,email\cf4 =\cf3 @email\cf2 ,address\cf4 =\cf3 @address\cf2 ,contactno\cf4 =\cf3 @contactno\cf2 ,qualification\cf4 =\cf3 @qualification\cf2  \cf1 where\cf2  id\cf4 =\cf3 @id\cf2\par
+\cf1 else\cf2\par
+\cf1 select\cf2  \cf3 @errormessage\cf4 =\cf5 'this email already exists please choose any other email id'\cf2\par
+\cf1 end\cf2\par
+\par
+\cf1 end\par
+\par
+\par
+\par
+\par
+\par
+\par
+\par
+\f0 ........................................\par
+\par
+\par
+\par
+\par
+\par
+create\cf2\f1  \cf1 proc\cf2  teachersregistration\par
+(\par
+\cf3 @id\cf2  \cf1 int\cf2 ,\par
+\cf3 @name\cf2  \cf1 varchar\cf2 (100),\par
+\cf3 @fathername\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @qualification\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @subject\cf2  \cf1 varchar\cf2 (30),\par
+\cf3 @dateofbirth\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @dateofjoining\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @email\cf2  \cf1 varchar\cf2 (60),\par
+\cf3 @contactno\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @address\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @errormessage\cf2  \cf1 varchar\cf2 (100) \cf1 output\cf2 ,\par
+\cf3 @password\cf2  \cf1 varchar\cf2 (50)\par
+)\par
+\cf1 as\cf2  \cf1 begin\cf2  \par
+\cf1 if\cf2 (\cf3 @id\cf4 =\cf2 0)\par
+\cf1 begin\cf2\par
+\cf1 declare\cf2  \cf3 @logintime\cf2  \cf1 datetime\cf2\par
+\cf1 set\cf2  \cf3 @logintime\cf4 =\cf6 getdate\cf2 ()\par
+\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  id \cf1 from\cf2  login \cf1 where\cf2  firstname\cf4 =\cf3 @email\cf2 )\par
+\cf1 begin\cf2\par
+\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  email \cf1 from\cf2  teacherregistration \cf1 where\cf2  email\cf4 =\cf3 @email\cf2 )\par
+\cf1 begin\cf2\par
+\cf1 insert\cf2  \cf1 into\cf2  teacherregistration(name,fathername,dateofbirth,dateofjoining,qualification,subject,email,address,contactno)\cf1 values\cf2 (\cf3 @name\cf2 ,\cf3 @fathername\cf2 ,\cf3 @dateofbirth\cf2 ,\cf3 @dateofjoining\cf2 ,\cf3 @qualification\cf2 ,\cf3 @subject\cf2 ,\cf3 @email\cf2 ,\cf3 @address\cf2 ,\cf3 @contactno\cf2 )\par
+\cf1 insert\cf2  \cf1 into\cf2  login(firstname,password,logout,lastlogin,usertype)\cf1 values\cf2 (\cf3 @email\cf2 ,\cf3 @password\cf2 ,\cf4 null\cf2 ,\cf4 null\cf2 ,\cf5 'teacher'\cf2 )\par
+\cf1 end\cf2\par
+\cf1 else\cf2\par
+\cf1 select\cf2  \cf3 @errormessage\cf4 =\cf5 'this email already exists please choose any other email id'\cf2\par
+\cf1 end\cf2\par
+\cf1 else\cf2\par
+\cf1 select\cf2  \cf3 @errormessage\cf4 =\cf5 'this email already exists please choose any other email id'\cf2\par
+\cf1 end\cf2\par
+\cf1 end\par
+\par
+\par
+\f0 ....................\par
+\par
+create\cf2\f1  \cf1 proc\cf2  subjectmarksupdation\par
+(\par
+  \cf3 @class\cf2  \cf1 varchar\cf2 (50),\par
+  \cf3 @rollno\cf2  \cf1 varchar\cf2 (50),\par
+  \cf3 @section\cf2  \cf1 varchar\cf2 (5),\par
+  \cf3 @subjectname\cf2  \cf1 varchar\cf2 (20),\par
+  \cf3 @subjectmarks\cf2  \cf1 varchar\cf2 (20),\par
+  \cf3 @examtype\cf2  \cf1 varchar\cf2 (20),\par
+  \cf3 @studentname\cf2  \cf1 varchar\cf2 (100)\par
+  \par
+)\par
+\cf1 as\cf2  \cf1 begin\cf2  \par
+\par
+\par
+\par
+\par
+\par
+\par
+\cf1 if\cf2  \cf3 @subjectname\cf4 =\cf5 'telugu'\cf2\par
+\cf1 begin\cf2\par
+\cf1 update\cf2  studentmarks \cf1 set\cf2   telugu\cf4 =\cf3 @subjectmarks\cf2  \cf1 where\cf2  class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \cf4 and\cf2  studentname\cf4 =\cf3 @studentname\cf2\par
+\cf1 end\cf2\par
+\par
+\cf1 if\cf2  \cf3 @subjectname\cf4 =\cf5 'hindi'\cf2\par
+\cf1 begin\cf2\par
+\cf1 update\cf2  studentmarks \cf1 set\cf2   hindi\cf4 =\cf3 @subjectmarks\cf2  \cf1 where\cf2  class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \cf4 and\cf2  studentname\cf4 =\cf3 @studentname\cf2\par
+\cf1 end\cf2\par
+\par
+\cf1 if\cf2  \cf3 @subjectname\cf4 =\cf5 'english'\cf2\par
+\cf1 begin\cf2\par
+\cf1 update\cf2  studentmarks \cf1 set\cf2   english\cf4 =\cf3 @subjectmarks\cf2  \cf1 where\cf2  class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \cf4 and\cf2  studentname\cf4 =\cf3 @studentname\cf2\par
+\cf1 end\cf2\par
+\par
+\cf1 if\cf2  \cf3 @subjectname\cf4 =\cf5 'maths'\cf2\par
+\cf1 begin\cf2\par
+\cf1 update\cf2  studentmarks \cf1 set\cf2   maths\cf4 =\cf3 @subjectmarks\cf2  \cf1 where\cf2  class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \cf4 and\cf2  studentname\cf4 =\cf3 @studentname\cf2\par
+\cf1 end\cf2\par
+\par
+\cf1 if\cf2  \cf3 @subjectname\cf4 =\cf5 'science'\cf2\par
+\cf1 begin\cf2\par
+\cf1 update\cf2  studentmarks \cf1 set\cf2   science\cf4 =\cf3 @subjectmarks\cf2  \cf1 where\cf2  class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \cf4 and\cf2  studentname\cf4 =\cf3 @studentname\cf2\par
+\cf1 end\cf2\par
+\par
+\cf1 if\cf2  \cf3 @subjectname\cf4 =\cf5 'social'\cf2\par
+\cf1 begin\cf2\par
+\cf1 print\cf2  \cf5 '123'\cf2\par
+\cf1 update\cf2  studentmarks \cf1 set\cf2   social\cf4 =\cf3 @subjectmarks\cf2  \cf1 where\cf2  class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \cf4 and\cf2  studentname\cf4 =\cf3 @studentname\cf2\par
+\cf1 end\cf2\par
+\par
+\par
+\par
+\cf1 end\par
+\par
+\par
+\f0 ..............................\par
+\par
+create\cf2\f1  \cf1 proc\cf2  subjectmarksinsertorupdate\par
+(\par
+\par
+\cf3 @studentname\cf2  \cf1 varchar\cf2 (100),\par
+\cf3 @class\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @section\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @examtype\cf2  \cf1 varchar\cf2 (25),\par
+\cf3 @subjectname\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @subjectmarks\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @rollno\cf2  \cf1 int\cf2 ,\par
+\cf3 @message\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @returnmessage\cf2  \cf1 varchar\cf2 (100) \cf1 output\cf2\par
+\par
+)\par
+\cf1 as\cf2  \cf1 begin\cf2\par
+\cf1 declare\cf2  \cf3 @sqlstring\cf2  \cf1 varchar\cf2 (1000)\par
+\par
+\par
+\par
+\cf1 if\cf2 (\cf3 @message\cf4 =\cf5 'update'\cf2 )\par
+\cf1 begin\cf2\par
+\tab\par
+\tab\cf1 if\cf2 (\cf3 @subjectname\cf4 =\cf5 'telugu'\cf2 )\par
+\tab\tab\tab\cf1 begin\cf2\par
+\tab\tab\tab\tab\tab\cf1 update\cf2  studentmarks \cf1 set\cf2  telugu\cf4 =\cf3 @subjectmarks\cf2  \par
+\tab\tab\tab\tab\cf1 where\cf2  class\cf4 =\cf3 @class\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  studentname\cf4 =\cf3 @studentname\cf2\tab\par
+\tab\tab\tab\tab\cf1 end\cf2\par
+\tab\tab\tab\cf1 if\cf2 (\cf3 @subjectname\cf4 =\cf5 'hindi'\cf2 )\par
+\tab\tab\tab\tab\cf1 begin\cf2\par
+\tab\tab\tab\tab\cf1 update\cf2  studentmarks \cf1 set\cf2  hindi\cf4 =\cf3 @subjectmarks\cf2  \par
+\tab\tab\tab\tab\cf1 where\cf2  class\cf4 =\cf3 @class\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  studentname\cf4 =\cf3 @studentname\cf2\tab\par
+\tab\par
+\tab\tab\tab\tab\cf1 end\cf2\par
+\tab\tab\tab\par
+\tab\tab\tab\cf1 if\cf2 (\cf3 @subjectname\cf4 =\cf5 'english'\cf2 )\par
+\tab\tab\tab\tab\cf1 begin\cf2\par
+\tab\tab\tab\tab\cf1 update\cf2  studentmarks \cf1 set\cf2  english\cf4 =\cf3 @subjectmarks\cf2  \par
+\tab\tab\tab\tab\cf1 where\cf2  class\cf4 =\cf3 @class\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  studentname\cf4 =\cf3 @studentname\cf2\tab\par
+\tab\par
+\tab\tab\tab\tab\cf1 end\cf2\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\tab\cf1 if\cf2 (\cf3 @subjectname\cf4 =\cf5 'maths'\cf2 )\par
+\tab\tab\tab\tab\cf1 begin\cf2\par
+\tab\tab\tab\tab\tab\cf1 update\cf2  studentmarks \cf1 set\cf2  maths\cf4 =\cf3 @subjectmarks\cf2  \par
+\tab\tab\tab\tab\cf1 where\cf2  class\cf4 =\cf3 @class\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  studentname\cf4 =\cf3 @studentname\cf2\tab\par
+\par
+\tab\tab\tab\tab\cf1 end\cf2\par
+\tab\tab\tab\tab\par
+\tab\tab\tab\tab\par
+\tab\tab\tab\tab\cf1 if\cf2 (\cf3 @subjectname\cf4 =\cf5 'science'\cf2 )\par
+\tab\tab\tab\tab\cf1 begin\cf2\par
+\tab\tab\tab\tab\tab\par
+\tab\tab\tab\cf1 update\cf2  studentmarks \cf1 set\cf2  science\cf4 =\cf3 @subjectmarks\cf2  \par
+\tab\tab\tab\tab\cf1 where\cf2  class\cf4 =\cf3 @class\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  studentname\cf4 =\cf3 @studentname\cf2\tab\par
+\par
+\tab\tab\tab\tab\cf1 end\cf2\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\tab\cf1 if\cf2 (\cf3 @subjectname\cf4 =\cf5 'social'\cf2 )\par
+\tab\tab\tab\tab\cf1 begin\cf2\par
+\tab\tab\tab\tab\tab\par
+\tab\tab\tab\cf1 update\cf2  studentmarks \cf1 set\cf2  social\cf4 =\cf3 @subjectmarks\cf2  \par
+\tab\tab\tab\tab\cf1 where\cf2  class\cf4 =\cf3 @class\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \par
+\tab\tab\tab\tab\tab\cf4 and\cf2  studentname\cf4 =\cf3 @studentname\cf2\tab\par
+\par
+\tab\tab\tab\tab\cf1 end\cf2\par
+\par
+\par
+\cf1 set\cf2  \cf3 @returnmessage\cf4 =\cf5 'updated'\cf2\par
+\cf1 print\cf2  \cf3 @returnmessage\cf2\par
+\par
+\cf1 end\cf2\par
+\par
+\par
+\cf1 end\par
+\par
+\par
+\f0 ....................\par
+\par
+\par
+\par
+create\cf2\f1  \cf1 proc\cf2  studentupdation\par
+(\par
+\cf3 @id\cf2  \cf1 int\cf2 ,\par
+\cf3 @admissionno\cf2  \cf1 varchar\cf2 (20),\par
+\cf3 @firstname\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @lastname\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @fathername\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @dateofbirth\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @joindate\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @bloodgroup\cf2  \cf1 varchar\cf2 (5),\par
+\cf3 @contactno\cf2  \cf1 varchar\cf2 (15),\par
+\cf3 @address\cf2  \cf1 varchar\cf2 (200),\par
+\cf3 @email\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @photo\cf2  \cf1 image\cf2 ,\par
+\cf3 @message\cf2  \cf1 varchar\cf2 (70) \cf1 output\cf2 ,\par
+\cf3 @busfacility\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @rollno\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @class\cf2  \cf1 varchar\cf2 (15),\par
+\cf3 @section\cf2  \cf1 varchar\cf2 (10),\par
+\par
+\cf3 @usertype\cf2  \cf1 varchar\cf2 (20)\par
+)\par
+\cf1 as\cf2  \par
+\cf1 begin\cf2\par
+\cf1 if\cf2 (\cf3 @id\cf4 >\cf2 0)\par
+\tab\cf1 begin\cf2\par
+\tab\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  email \cf1 from\cf2  studentregistration \cf1 where\cf2  email\cf4 =\cf3 @email\cf2  \cf4 and\cf2  id\cf4 <>\cf3 @id\cf2 )\par
+\tab\cf1 update\cf2  studentregistration \cf1 set\cf2  firstname\cf4 =\cf3 @firstname\cf2 ,lastname\cf4 =\cf3 @lastname\cf2 ,fathername\cf4 =\cf3 @fathername\cf2 ,dateofbirth\cf4 =\cf3 @dateofbirth\cf2 ,joindate\cf4 =\cf3 @joindate\cf2 ,bloodgroup\cf4 =\cf3 @bloodgroup\cf2 ,address\cf4 =\cf3 @address\cf2 ,email\cf4 =\cf3 @email\cf2 ,photo\cf4 =\cf3 @photo\cf2 ,busfacility\cf4 =\cf3 @busfacility\cf2 ,rollno\cf4 =\cf3 @rollno\cf2 ,class\cf4 =\cf3 @class\cf2 ,section\cf4 =\cf3 @section\cf2 ,admissionno\cf4 =\cf3 @admissionno\cf2 ,contactno\cf4 =\cf3 @contactno\cf2 ,usertype\cf4 =\cf5 'student'\cf2  \cf1 where\cf2  id\cf4 =\cf3 @id\cf2\par
+\tab\cf1 else\cf2\par
+\tab\cf1 select\cf2  \cf3 @message\cf4 =\cf5 'this email already exists please select any other email id'\cf2\par
+\tab\cf1 end\cf2\par
+\cf1 end\par
+\par
+\par
+\f0 .....................\par
+\par
+\par
+\par
+\par
+create\cf2\f1  \cf1 proc\cf2  studentinsertion\par
+(\par
+\cf3 @id\cf2  \cf1 int\cf2 ,\par
+\cf3 @admissionno\cf2  \cf1 varchar\cf2 (20),\par
+\cf3 @firstname\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @lastname\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @fathername\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @dateofbirth\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @joindate\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @bloodgroup\cf2  \cf1 varchar\cf2 (5),\par
+\cf3 @contactno\cf2  \cf1 varchar\cf2 (15),\par
+\cf3 @address\cf2  \cf1 varchar\cf2 (200),\par
+\cf3 @email\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @photo\cf2  \cf1 image\cf2 ,\par
+\cf3 @message\cf2  \cf1 varchar\cf2 (70) \cf1 output\cf2 ,\par
+\cf3 @busfacility\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @rollno\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @class\cf2  \cf1 varchar\cf2 (15),\par
+\cf3 @section\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @username\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @password\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @usertype\cf2  \cf1 varchar\cf2 (20)\par
+)\par
+\cf1 as\cf2  \par
+\cf1 begin\cf2\par
+ \tab\cf1 declare\cf2  \cf3 @daate\cf2  \cf1 datetime\cf2  \par
+\tab\cf1 set\cf2  \cf3 @daate\cf4 =\cf6 getdate\cf2 ()\par
+\tab\par
+\tab\par
+\tab\cf1 if\cf2 (\cf3 @id\cf4 =\cf2 0)\par
+\tab\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  email \cf1 from\cf2  studentregistration \cf1 where\cf2  email\cf4 =\cf3 @email\cf2 )\par
+\cf1 begin\cf2\par
+\tab\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  firstname \cf1 from\cf2  login \cf1 where\cf2  firstname\cf4 =\cf3 @username\cf2 )\par
+\tab\tab\cf1 begin\cf2\par
+\tab\tab\cf1 insert\cf2  \cf1 into\cf2  studentregistration(admissionno,firstname,lastname,fathername,dateofbirth,joindate,bloodgroup,contactno,address,email,photo,busfacility,rollno,class,section,usertype)\cf1 values\cf2 (\cf3 @admissionno\cf2 ,\cf3 @firstname\cf2 ,\cf3 @lastname\cf2 ,\cf3 @fathername\cf2 ,\cf3 @dateofbirth\cf2 ,\cf3 @joindate\cf2 ,\cf3 @bloodgroup\cf2 ,\cf3 @contactno\cf2 ,\cf3 @address\cf2 ,\cf3 @email\cf2 ,\cf3 @photo\cf2 ,\cf3 @busfacility\cf2 ,\cf3 @rollno\cf2 ,\cf3 @class\cf2 ,\cf3 @section\cf2 ,\cf5 'student'\cf2 )\tab\tab\par
+\tab\tab\cf1 insert\cf2  \cf1 into\cf2  login(firstname,password,lastlogin,logout,usertype)\cf1 values\cf2 (\cf3 @username\cf2 ,\cf3 @password\cf2 ,\cf3 @daate\cf2 ,\cf4 null\cf2 ,\cf3 @usertype\cf2 )\par
+\tab\tab\tab\cf1 end\cf2\par
+\tab\tab\tab\cf1 else\cf2\par
+\tab\tab\tab\cf1 select\cf2  \cf3 @message\cf4 =\cf5 'this username already exists please select any other username'\cf2\par
+\tab\tab\tab\cf1 end\cf2\par
+\tab\tab\cf1 else\cf2\par
+\tab\tab\cf1 select\cf2  \cf3 @message\cf4 =\cf5 'this email already exists please select any other email id'\cf2\par
+\tab\par
+\tab\par
+\tab\par
+\tab\par
+\cf1 end\par
+\par
+\f0 ..........................\par
+\par
+\par
+\f1\par
+\par
+\f0 create\cf2\f1   \cf1 proc\cf2  searchstudentwithoutstudentname\par
+(\par
+\cf3 @class\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @section\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @examtype\cf2  \cf1 varchar\cf2 (15)\par
+)\par
+\cf1 as\cf2  \cf1 begin\cf2  \par
+\tab\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentregistration \cf1 where\cf2  class \par
+\tab\cf4 like\cf2  \cf3 @class\cf2  \cf4 +\cf5 '%'\cf2  \cf4 and\cf2  section \cf4 like\cf2  \cf3 @section\cf2  \cf4 +\cf5 '%'\cf2\par
+\tab\par
+\cf1 end\par
+\f0 ................................\par
+\par
+\par
+\par
+create\cf2\f1  \cf1 proc\cf2  searchstudent\par
+(\par
+\cf3 @class\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @section\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @studentname\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @examtype\cf2  \cf1 varchar\cf2 (15),\par
+\cf3 @subjectname\cf2  \cf1 varchar\cf2 (25),\par
+\cf3 @rollno\cf2  \cf1 int\cf2 ,\par
+\cf3 @returnmessage\cf2  \cf1 varchar\cf2 (200) \cf1 output\cf2\par
+\par
+)\par
+\cf1 as\cf2  \cf1 begin\cf2  \par
+\par
+\cf1 declare\cf2  \cf3 @rollno1\cf2  \cf1 int\cf2\par
+\par
+\cf1 if\cf2 (\cf3 @studentname\cf2  \cf4 <>\cf2  \cf5 ''\cf2  \cf4 and\cf2  \cf3 @rollno\cf2  \cf4 <>\cf2  0)\par
+\par
+\cf1 begin\cf2\par
+\tab\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2\par
+\tab (\par
+\tab\par
+\tab\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentmarks \par
+\tab\cf1 where\cf2  \par
+\tab\tab (\par
+\tab\tab class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  \par
+\tab\tab section\cf4 =\cf3 @section\cf2  \cf4 and\cf2\par
+\tab\tab studentname\cf4 =\cf3 @studentname\cf2  \cf4 and\cf2  \par
+\tab\tab examtype\cf4 =\cf3 @examtype\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \par
+\tab\tab )\par
+\tab )\par
+\par
+\par
+\tab\tab\cf1 begin\cf2\par
+\tab\tab\par
+\tab\tab\par
+\tab\tab\par
+\tab\tab\tab\tab\cf1 insert\cf2  \cf1 into\cf2  studentmarks\par
+\tab\tab\tab\tab (\par
+\tab\tab\tab\tab telugu,hindi,english,maths,\par
+\tab\tab\tab\tab science,social,class,section,\par
+\tab\tab\tab\tab examtype,studentname,rollno\par
+\tab\tab\tab\tab )\par
+\tab\tab\tab\tab\cf1 values\cf2\par
+\tab\tab\tab\tab (\par
+\tab\tab\tab\tab\cf5 '-'\cf2 ,\cf5 '-'\cf2 ,\cf5 '-'\cf2 ,\cf5 '-'\cf2 ,\cf5 '-'\cf2 ,\cf5 '-'\cf2 ,\par
+\tab\tab\tab\tab\cf3 @class\cf2 ,\cf3 @section\cf2 ,\cf3 @examtype\cf2 ,\par
+\tab\tab\tab\tab\cf3 @studentname\cf2 ,\cf3 @rollno\cf2\par
+\tab\tab\tab\tab )\par
+\tab\tab\tab\tab\cf1 set\cf2  \cf3 @returnmessage\cf4 =\cf5 'inserted'\cf2\tab\par
+\tab\tab\tab\tab\cf1 print\cf2  \cf3 @returnmessage\cf2\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\tab\tab\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentmarks \par
+\tab\tab\tab\tab\cf1 where\cf2  \par
+\tab\tab\tab\tab\tab (\par
+\tab\tab\tab\tab\tab class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  \par
+\tab\tab\tab\tab\tab section\cf4 =\cf3 @section\cf2  \cf4 and\cf2\par
+\tab\tab\tab\tab\tab studentname\cf4 =\cf3 @studentname\cf2  \cf4 and\cf2  \par
+\tab\tab\tab\tab\tab examtype\cf4 =\cf3 @examtype\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \par
+\tab\tab\tab\tab\tab )\par
+\tab\tab\tab\tab\tab\tab\par
+\tab\cf1 end\cf2\par
+\tab\par
+\tab\cf1 else\cf2\par
+\tab\cf1 begin\cf2  \par
+\tab\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentmarks \par
+\tab\cf1 where\cf2  \par
+\tab\tab (\par
+\tab\tab class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  \par
+\tab\tab section\cf4 =\cf3 @section\cf2  \cf4 and\cf2\par
+\tab\tab studentname\cf4 =\cf3 @studentname\cf2  \cf4 and\cf2  \par
+\tab\tab examtype\cf4 =\cf3 @examtype\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2 )\par
+\tab\cf1 end\cf2\par
+\tab\cf1 end\cf2\tab\par
+\tab\cf7 -------------------------------------------\tab\par
+\cf1 if\cf2 (\cf3 @studentname\cf4 =\cf5 ''\cf2  \cf4 and\cf2  \cf3 @rollno\cf4 =\cf2 0)\par
+\tab\cf1 begin\cf2\par
+\tab\par
+\tab\cf1 if\cf2   \cf4 exists\cf2 (\cf1 select\cf2  \cf4 *\cf2   \cf1 from\cf2  studentmarks \par
+\tab\cf1 where\cf2  \par
+\tab\tab (\par
+\tab\tab class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2   \cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2\par
+\tab\tab )\par
+\tab )\par
+\tab\par
+\tab\cf1 begin\cf2\par
+\tab\par
+\tab\tab\tab\par
+\tab\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentmarks \par
+\tab\cf1 where\cf2  \par
+\tab\tab (\par
+\tab\tab class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  \par
+\tab\tab section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2\par
+\tab\tab )\par
+\tab\tab\par
+\tab\par
+\tab\tab\par
+\tab\cf1 end\cf2\par
+\tab\par
+\tab\cf1 else\cf2\par
+\tab\cf1 begin\cf2\par
+\tab\cf1 if\cf2  \cf4 exists\cf2 (\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentregistration \cf1 where\cf2  class\cf4 =\cf3 @class\cf2\par
+\tab  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2 )\par
+\tab\cf1 begin\cf2\par
+\tab\par
+\tab\tab\par
+\tab\tab\cf1 insert\cf2  \cf1 into\cf2  studentmarks(studentname,class,section,examtype,rollno)\par
+\tab\tab\cf1 SELECT\cf2  sr.firstname\cf4 +\cf5 ' '\cf4 +\cf2 sr.lastname,sr.class,sr.section,\cf3 @examtype\cf2 ,sr.rollno \cf1 from\cf2  \par
+\tab\tab studentregistration sr \cf1 where\cf2  \par
+\tab\tab sr.class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  sr.section\cf4 =\cf3 @section\cf2\par
+\tab\tab\cf1 set\cf2  \cf3 @returnmessage\cf4 =\cf5 'inserted'\cf2\tab\par
+\tab\tab\cf1 print\cf2  \cf3 @returnmessage\cf2\par
+\tab\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentmarks \par
+\tab\cf1 where\cf2  \par
+\tab\tab (\par
+\tab\tab class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  \par
+\tab\tab section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2\par
+\tab\tab )\par
+\tab\tab\par
+\tab\par
+\tab\tab\cf1 end\cf2\par
+\tab\tab\tab\par
+\tab\tab\cf1 else\cf2\par
+\tab\tab\cf1 begin\cf2\par
+\tab\tab\cf1 set\cf2  \cf3 @returnmessage\cf4 =\cf5 'No student is registered in this particular class and section for updation of marks'\cf2\par
+\tab\tab\cf1 print\cf2  \cf3 @returnmessage\cf2\par
+\tab\tab\cf1 end\cf2\par
+\tab\tab\par
+\tab\cf1 end\cf2\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\cf1 end\cf2\par
+\cf1 if\cf2 (\cf3 @studentname\cf2  \cf4 <>\cf5 ''\cf2  \cf4 and\cf2  \cf3 @rollno\cf4 =\cf2 0)\par
+\tab\cf1 begin\cf2  \par
+\tab\par
+\tab\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2\par
+\tab (\par
+\tab\par
+\tab\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentmarks \par
+\tab\cf1 where\cf2  \par
+\tab\tab (\par
+\tab\tab class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  \par
+\tab\tab section\cf4 =\cf3 @section\cf2  \cf4 and\cf2\par
+\tab\tab studentname\cf4 =\cf3 @studentname\cf2  \cf4 and\cf2  \par
+\tab\tab examtype\cf4 =\cf3 @examtype\cf2  \par
+\tab\tab )\par
+\tab )\par
+\par
+\par
+\tab\tab\cf1 begin\cf2\par
+\tab\tab\par
+\tab\tab\cf1 select\cf2  \cf3 @rollno1\cf4 =\cf2 rollno \cf1 from\cf2  studentregistration \cf1 where\cf2\par
+\par
+\tab\tab class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \cf4 and\cf2\par
+\par
+\tab\tab firstname \cf4 +\cf5 ' '\cf4 +\cf2 lastname\cf4 =\cf3 @studentname\cf2\par
+\tab\tab\par
+\tab\tab\tab\tab\cf1 insert\cf2  \cf1 into\cf2  studentmarks\par
+\tab\tab\tab\tab (\par
+\tab\tab\tab\tab telugu,hindi,english,maths,\par
+\tab\tab\tab\tab science,social,class,section,\par
+\tab\tab\tab\tab examtype,studentname,rollno\par
+\tab\tab\tab\tab )\par
+\tab\tab\tab\tab\cf1 values\cf2\par
+\tab\tab\tab\tab (\par
+\tab\tab\tab\tab\cf5 '-'\cf2 ,\cf5 '-'\cf2 ,\cf5 '-'\cf2 ,\cf5 '-'\cf2 ,\cf5 '-'\cf2 ,\cf5 '-'\cf2 ,\par
+\tab\tab\tab\tab\cf3 @class\cf2 ,\cf3 @section\cf2 ,\cf3 @examtype\cf2 ,\par
+\tab\tab\tab\tab\cf3 @studentname\cf2 ,\cf3 @rollno1\cf2\par
+\tab\tab\tab\tab )\par
+\tab\tab\tab\tab\cf1 set\cf2  \cf3 @returnmessage\cf4 =\cf5 'inserted'\cf2\tab\par
+\tab\tab\tab\tab\cf1 print\cf2  \cf3 @returnmessage\cf2\par
+\tab\tab\tab\par
+\tab\tab\tab\par
+\tab\tab\tab\tab\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentmarks \par
+\tab\tab\tab\tab\cf1 where\cf2  \par
+\tab\tab\tab\tab\tab (\par
+\tab\tab\tab\tab\tab class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  \par
+\tab\tab\tab\tab\tab section\cf4 =\cf3 @section\cf2  \cf4 and\cf2\par
+\tab\tab\tab\tab\tab studentname\cf4 =\cf3 @studentname\cf2  \cf4 and\cf2  \par
+\tab\tab\tab\tab\tab examtype\cf4 =\cf3 @examtype\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \par
+\tab\tab\tab\tab\tab )\par
+\tab\tab\tab\tab\tab\tab\par
+\tab\cf1 end\cf2\par
+\tab\par
+\tab\cf1 else\cf2\par
+\tab\cf1 begin\cf2  \par
+\tab\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentmarks \par
+\tab\cf1 where\cf2  \par
+\tab\tab (\par
+\tab\tab class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  \par
+\tab\tab section\cf4 =\cf3 @section\cf2  \cf4 and\cf2\par
+\tab\tab studentname\cf4 =\cf3 @studentname\cf2  \cf4 and\cf2  \par
+\tab\tab examtype\cf4 =\cf3 @examtype\cf2 )\par
+\tab\cf1 end\cf2\par
+\tab\cf1 end\cf2\tab\par
+\tab\par
+\tab\par
+\tab\par
+\tab\par
+\tab\par
+\tab\cf1 end\par
+\par
+\par
+\f0 ..........................\par
+\par
+\par
+\par
+create\cf2\f1  \cf1 proc\cf2  searchmarks \par
+(\par
+\cf3 @studentname\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @class\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @section\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @rollno\cf2  \cf1 int\cf2 ,\par
+\cf3 @returnmessage\cf2  \cf1 varchar\cf2 (500) \cf1 output\cf2\par
+)\par
+\cf1 as\cf2  \cf1 begin\cf2\par
+\cf1 if\cf2 (\cf3 @studentname\cf2  \cf4 <>\cf5 ''\cf2 )\par
+\cf1 begin\cf2\par
+\cf1 if\cf2 (\cf3 @rollno\cf2  \cf4 <>\cf2  \cf5 ''\cf2 )\par
+\cf1 begin\cf2\par
+\cf1 if\cf2  \cf4 exists\cf2 (\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentregistration \cf1 where\cf2  firstname\cf4 +\cf5 ' '\cf4 +\cf2\par
+lastname\cf4 =\cf3 @studentname\cf2  \cf4 and\cf2  class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2 )\par
+\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentregistration \cf1 where\cf2  firstname\cf4 +\cf5 ' '\cf4 +\cf2\par
+lastname\cf4 =\cf3 @studentname\cf2  \cf4 and\cf2\par
+ class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \par
+\par
+\cf1 else\cf2\par
+\cf1 begin\cf2\par
+\cf1 set\cf2  \cf3 @returnmessage\cf4 =\cf5 'No Records found'\cf2\par
+\cf1 print\cf2  \cf3 @returnmessage\cf2\par
+\cf1 end\cf2\par
+\cf1 end\cf2\par
+\par
+\cf1 else\cf2  \cf1 if\cf2 (\cf3 @rollno\cf2  \cf4 =\cf2  0)\par
+\cf1 begin\cf2\par
+\cf1 if\cf2  \cf4 exists\cf2 (\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentregistration \cf1 where\cf2  firstname\cf4 +\cf5 ' '\cf4 +\cf2\par
+lastname\cf4 =\cf3 @studentname\cf2  \cf4 and\cf2  class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2 )\par
+\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentregistration \cf1 where\cf2  firstname\cf4 +\cf5 ' '\cf4 +\cf2\par
+lastname\cf4 =\cf3 @studentname\cf2  \cf4 and\cf2   class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2\par
+\cf1 else\cf2\par
+\cf1 begin\cf2\par
+\cf1 set\cf2  \cf3 @returnmessage\cf4 =\cf5 'No Records found'\cf2\par
+\cf1 print\cf2  \cf3 @returnmessage\cf2\par
+\cf1 end\cf2\par
+\cf1 end\cf2\par
+\cf1 end\cf2\par
+\par
+\par
+\par
+\cf1 else\cf2  \cf1 if\cf2 (\cf3 @studentname\cf2  \cf4 =\cf5 ''\cf2 )\par
+\cf1 begin\cf2\par
+\par
+\cf1 if\cf2 (\cf3 @rollno\cf2  \cf4 <>\cf2  \cf5 ''\cf2 )\par
+\cf1 begin\cf2\par
+\cf1 if\cf2  \cf4 exists\cf2 (\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentregistration \cf1 where\cf2   class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2\par
+)\par
+\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentregistration \cf1 where\cf2   class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2\par
+\par
+\cf1 else\cf2\par
+\cf1 begin\cf2\par
+\cf1 set\cf2  \cf3 @returnmessage\cf4 =\cf5 'No Records found'\cf2\par
+\cf1 print\cf2  \cf3 @returnmessage\cf2\par
+\cf1 end\cf2\par
+\par
+\cf1 end\cf2\par
+\par
+\cf1 else\cf2  \cf1 if\cf2 (\cf3 @rollno\cf2  \cf4 =\cf2  0)\par
+\cf1 begin\cf2\par
+\cf1 if\cf2  \cf4 exists\cf2 (\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentregistration \cf1 where\cf2  class\cf4 =\cf3 @class\cf2  \par
+\cf4 and\cf2  section\cf4 =\cf3 @section\cf2 )\par
+\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  studentregistration \cf1 where\cf2  class\cf4 =\cf3 @class\cf2  \par
+\cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \par
+\cf1 else\cf2\par
+\cf1 begin\cf2\par
+\cf1 set\cf2  \cf3 @returnmessage\cf4 =\cf5 'No Records found'\cf2\par
+\cf1 print\cf2  \cf3 @returnmessage\cf2\par
+\cf1 end\cf2\par
+\par
+\cf1 end\cf2\par
+\par
+\cf1 end\cf2\par
+\par
+\cf1 end\par
+\par
+\par
+\f0 ..............................\par
+\par
+\par
+\par
+\par
+\par
+create\cf2\f1  \cf1 proc\cf2  registerorupdateemployee\par
+(\par
+\cf3 @id\cf2  \cf1 int\cf2 ,\par
+\cf3 @employeeid\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @firstname\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @lastname\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @bloodgroup\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @dateofbirth\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @joiningdate\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @email\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @alternateemail\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @phone\cf2  \cf1 varchar\cf2 (50),\par
+\par
+\cf3 @photo\cf2  \cf1 image\cf2 ,\par
+\cf3 @msg\cf2  \cf1 varchar\cf2 (500) \cf1 output\cf2 ,\par
+\cf3 @trainedinstitute\cf2  \cf1 varchar\cf2 (50)\par
+)\par
+\par
+\cf1 as\cf2  \par
+\cf1 begin\cf2  \par
+\par
+\tab\cf1 if\cf2 (\cf3 @id\cf4 =\cf2 0)\par
+\tab\cf1 begin\cf2\par
+\tab\tab\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  email \cf1 from\cf2  register \cf1 where\cf2  email\cf4 =\cf3 @email\cf2 )\par
+\tab\tab\cf1 begin\cf2\par
+\tab\tab\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  alternateemail \cf1 from\cf2  register \cf1 where\cf2  alternateemail \cf4 =\cf2  \cf3 @alternateemail\cf2 )\par
+\tab\tab\cf1 insert\cf2  \cf1 into\cf2  register(employeeid,firstname,lastname,bloodgroup,dateofbirth,joiningdate,email,alternateemail,phone,photo,trainedinstitute)\par
+\tab\tab\cf1 values\cf2 (\cf3 @employeeid\cf2 ,\cf3 @firstname\cf2 ,\cf3 @lastname\cf2 ,\cf3 @bloodgroup\cf2 ,\cf3 @dateofbirth\cf2 ,\cf3 @joiningdate\cf2 ,\cf3 @email\cf2 ,\cf3 @alternateemail\cf2 ,\cf3 @phone\cf2 ,\cf3 @photo\cf2 ,\cf3 @trainedinstitute\cf2 )\par
+\tab\tab\cf1 else\cf2\par
+\tab\tab\cf1 select\cf2  \cf3 @msg\cf4 =\cf5 'this alternate email already exists please select any other alternate email'\cf2\par
+\tab\tab\cf1 end\cf2\par
+\tab\tab\cf1 else\cf2  \par
+\tab\tab\cf1 select\cf2  \cf3 @msg\cf4 =\cf5 'this email already exists please select any other email'\cf2\par
+\tab\tab\par
+\tab\cf1 end\cf2\par
+\tab\cf1 if\cf2 (\cf3 @id\cf2  \cf4 >\cf2  0)\par
+\tab\cf1 begin\cf2\par
+\tab\tab\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  email \cf1 from\cf2  register \cf1 where\cf2  email \cf4 =\cf2  \cf3 @email\cf2  \cf4 and\cf2  id\cf4 <>\cf3 @id\cf2 )\par
+\tab\tab\cf1 begin\cf2\par
+\tab\tab\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  alternateemail \cf1 from\cf2  register \cf1 where\cf2  alternateemail\cf4 =\cf3 @alternateemail\cf2  \cf4 and\cf2  id\cf4 <>\cf3 @id\cf2 )\par
+\tab\tab\cf1 update\cf2  register \cf1 set\cf2  employeeid\cf4 =\cf3 @employeeid\cf2 ,firstname\cf4 =\cf3 @firstname\cf2 ,lastname\cf4 =\cf3 @lastname\cf2 ,bloodgroup\cf4 =\cf3 @bloodgroup\cf2 ,dateofbirth\cf4 =\cf3 @dateofbirth\cf2 ,joiningdate\cf4 =\cf3 @joiningdate\cf2 ,email\cf4 =\cf3 @email\cf2 ,alternateemail\cf4 =\cf3 @alternateemail\cf2 ,phone\cf4 =\cf3 @phone\cf2 ,photo\cf4 =\cf3 @photo\cf2 ,trainedinstitute\cf4 =\cf3 @trainedinstitute\cf2  \cf1 where\cf2  id\cf4 =\cf3 @id\cf2\par
+\tab\tab\cf1 else\cf2\par
+\tab\tab\cf1 select\cf2  \cf3 @msg\cf4 =\cf5 'this alternate email already exists please select any other alternate email'\cf2\par
+\tab\tab\cf1 end\cf2\par
+\tab\tab\cf1 else\cf2\par
+\tab\tab\cf1 select\cf2  \cf3 @msg\cf2  \cf4 =\cf2  \cf5 'this email already exists please select any other email'\cf2\par
+\tab\tab\par
+\tab\cf1 end\cf2\par
+\cf1 end\par
+\par
+\par
+\f0 ..........................\par
+\par
+\par
+create\cf2\f1  \cf1 proc\cf2  parentupdation\par
+(\par
+\cf3 @id\cf2  \cf1 int\cf2 ,\par
+\cf3 @firstname\cf2  \cf1 varchar\cf2 (30),\par
+\cf3 @lastname\cf2  \cf1 varchar\cf2 (30),\par
+\cf3 @studentfirstname\cf2  \cf1 varchar\cf2 (30),\par
+\cf3 @studentlastname\cf2  \cf1 varchar\cf2 (30),\par
+\cf3 @class\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @section\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @contactno\cf2  \cf1 varchar\cf2 (30),\par
+\cf3 @email\cf2  \cf1 varchar\cf2 (30),\par
+\cf3 @address\cf2  \cf1 varchar\cf2 (30),\par
+\cf3 @message\cf2  \cf1 varchar\cf2 (100) \cf1 output\cf2\par
+\par
+)\par
+\cf1 as\cf2  \cf1 begin\cf2\par
+\cf1 if\cf2 (\cf3 @id\cf2  \cf4 >\cf2  0)\par
+\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  id \cf1 from\cf2  login \cf1 where\cf2  firstname\cf4 =\cf3 @email\cf2 )\par
+\cf1 begin\cf2\par
+\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  email \cf1 from\cf2  parentregistration \cf1 where\cf2  email\cf4 =\cf3 @email\cf2  \cf4 and\cf2  id\cf4 <>\cf3 @id\cf2 )\par
+\par
+\cf1 update\cf2  parentregistration \cf1 set\cf2  firstname\cf4 =\cf3 @firstname\cf2 ,\par
+lastname\cf4 =\cf3 @lastname\cf2 ,class\cf4 =\cf3 @class\cf2 ,section\cf4 =\cf3 @section\cf2 ,\par
+contactno\cf4 =\cf3 @contactno\cf2 ,email\cf4 =\cf3 @email\cf2 ,address\cf4 =\cf3 @address\cf2 ,\par
+studentfirstname\cf4 =\cf3 @studentfirstname\cf2 ,studentlastname\cf4 =\cf3 @studentlastname\cf2  \par
+\cf1 where\cf2  id\cf4 =\cf3 @id\cf2\par
+\cf1 else\cf2\par
+\cf1 select\cf2  \cf3 @message\cf4 =\cf5 'this email already exists please select any other mail id'\cf2\par
+\cf1 end\cf2\par
+\cf1 else\cf2\par
+\cf1 select\cf2  \cf3 @message\cf4 =\cf5 'this email already exists please select any other mail id'\cf2\par
+\cf1 end\par
+\par
+\par
+\par
+\f0 ............................\par
+\par
+\par
+\par
+\par
+create\cf2\f1  \cf1 proc\cf2  parentinsertion\par
+(\par
+\cf3 @id\cf2  \cf1 int\cf2 ,\par
+\cf3 @firstname\cf2  \cf1 varchar\cf2 (30),\par
+\cf3 @lastname\cf2  \cf1 varchar\cf2 (30),\par
+\cf3 @studentfirstname\cf2  \cf1 varchar\cf2 (30),\par
+\cf3 @studentlastname\cf2  \cf1 varchar\cf2 (30),\par
+\cf3 @class\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @section\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @contactno\cf2  \cf1 varchar\cf2 (30),\par
+\cf3 @email\cf2  \cf1 varchar\cf2 (30),\par
+\cf3 @address\cf2  \cf1 varchar\cf2 (30),\par
+\cf3 @message\cf2  \cf1 varchar\cf2 (100) \cf1 output\cf2 ,\par
+\cf3 @password\cf2  \cf1 varchar\cf2 (20),\par
+\tab\par
+\cf3 @usertype\cf2  \cf1 varchar\cf2 (20)\par
+\par
+)\par
+\cf1 as\cf2  \cf1 begin\cf2\par
+\par
+\tab\cf1 declare\cf2  \cf3 @lastlogin\cf2  \cf1 datetime\cf2\par
+\tab\cf1 set\cf2  \cf3 @lastlogin\cf4 =\cf6 getdate\cf2 ()\par
+\tab\par
+\tab\tab\cf1 if\cf2 (\cf3 @id\cf4 =\cf2 0)\par
+\tab\tab\cf1 begin\cf2\par
+\tab\tab\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  email \cf1 from\cf2  parentregistration \cf1 where\cf2  email\cf4 =\cf3 @email\cf2 )\par
+\tab\tab\tab\cf1 begin\cf2\par
+\tab\tab\tab\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  id \cf1 from\cf2  login \cf1 where\cf2  firstname\cf4 =\cf3 @email\cf2 )\par
+\tab\tab\tab\cf1 begin\cf2\par
+\tab\tab\tab\cf1 insert\cf2  \cf1 into\cf2  parentregistration(firstname,lastname,class,section,contactno,email,address,studentfirstname,studentlastname)\par
+\tab\tab\tab\cf1 values\cf2 (\cf3 @firstname\cf2 ,\cf3 @lastname\cf2 ,\cf3 @class\cf2 ,\cf3 @section\cf2 ,\cf3 @contactno\cf2 ,\cf3 @email\cf2 ,\cf3 @address\cf2 ,\cf3 @studentfirstname\cf2 ,\cf3 @studentlastname\cf2 )\par
+\tab\tab\tab\cf1 insert\cf2  \cf1 into\cf2  login(firstname,password,logout,lastlogin,usertype)\cf1 values\cf2 (\cf3 @email\cf2 ,\cf3 @password\cf2 ,\cf4 null\cf2 ,\cf3 @lastlogin\cf2 ,\cf3 @usertype\cf2 )\par
+\tab\tab\tab\cf1 end\cf2\par
+\tab\tab\tab\cf1 else\cf2\par
+\tab\tab\tab\tab\tab\cf1 select\cf2  \cf3 @message\cf4 =\cf5 'this email is already registered please register with any other email id'\cf2\par
+\tab\tab\tab\cf1 end\cf2\par
+\tab\tab\cf1 else\cf2\par
+\tab\tab\tab\cf1 select\cf2  \cf3 @message\cf4 =\cf5 'this email is already registered please register with any other email id'\cf2\par
+\cf1 end\cf2\par
+\cf1 end\par
+\cf0\f2\fs20\par
+\cf1\f0\fs24 ...............................\cf0\f2\fs20\par
+\par
+\par
+\cf1\f0\fs24 create\cf2\f1  \cf1 proc\cf2  inserttimetable\par
+(\par
+\cf3 @id\cf2  \cf1 int\cf2 ,\par
+\cf3 @telugu\cf2  \cf1 varchar\cf2 (15),\par
+\cf3 @hindi\cf2  \cf1 varchar\cf2 (15),\par
+\cf3 @english\cf2  \cf1 varchar\cf2 (15),\par
+\cf3 @maths\cf2  \cf1 varchar\cf2 (15),\par
+\cf3 @science\cf2  \cf1 varchar\cf2 (15),\par
+\cf3 @social\cf2  \cf1 varchar\cf2 (15),\par
+\cf3 @class\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @section\cf2  \cf1 varchar\cf2 (10),\par
+\cf3 @examtype\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @message\cf2  \cf1 varchar\cf2 (200) \cf1 output\cf2\par
+)\par
+\cf1 as\cf2  \cf1 begin\cf2\par
+\cf1 if\cf2 (\cf3 @id\cf4 =\cf2 0)\par
+\cf1 begin\cf2\par
+\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  id \cf1 from\cf2  exams1 \cf1 where\cf2  telugu\cf4 =\cf3 @telugu\cf2  \cf4 and\cf2  class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2 )\par
+\cf1 begin\cf2\par
+\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  id \cf1 from\cf2  exams1 \cf1 where\cf2  hindi\cf4 =\cf3 @hindi\cf2  \cf4 and\cf2  class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2 )\par
+\cf1 begin\cf2\par
+\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  id \cf1 from\cf2  exams1 \cf1 where\cf2  english\cf4 =\cf3 @english\cf2  \cf4 and\cf2  class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2 )\par
+\cf1 begin\cf2\par
+\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  id \cf1 from\cf2  exams1 \cf1 where\cf2  maths\cf4 =\cf3 @maths\cf2  \cf4 and\cf2  class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2 )\par
+\cf1 begin\cf2\par
+\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  id \cf1 from\cf2  exams1 \cf1 where\cf2  science\cf4 =\cf3 @science\cf2  \cf4 and\cf2  class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2 )\par
+\cf1 begin\cf2\par
+\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2 (\cf1 select\cf2  id \cf1 from\cf2  exams1 \cf1 where\cf2  social\cf4 =\cf3 @social\cf2  \cf4 and\cf2  class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \cf4 and\cf2  examtype\cf4 =\cf3 @examtype\cf2 )\par
+\cf1 begin\cf2\par
+\cf1 insert\cf2  \cf1 into\cf2  exams1(telugu,hindi,english,maths,science,social,class,section,examtype)\cf1 values\cf2 (\cf3 @telugu\cf2 ,\cf3 @hindi\cf2 ,\cf3 @english\cf2 ,\cf3 @maths\cf2 ,\cf3 @science\cf2 ,\cf3 @social\cf2 ,\cf3 @class\cf2 ,\cf3 @section\cf2 ,\cf3 @examtype\cf2 )\par
+\cf1 end\cf2\par
+\cf1 else\cf2\par
+\cf1 select\cf2  \cf3 @message\cf4 =\cf5 'social exam is already registered for this class'\cf2\par
+\cf1 end\cf2\par
+\cf1 else\cf2\par
+\cf1 select\cf2  \cf3 @message\cf4 =\cf5 'science exam is already registered for this class'\cf2\par
+\cf1 end\cf2\par
+\cf1 else\cf2\par
+\cf1 select\cf2  \cf3 @message\cf4 =\cf5 'maths exam is already registered for this class'\cf2\par
+\cf1 end\cf2\par
+\cf1 else\cf2\par
+\cf1 select\cf2  \cf3 @message\cf4 =\cf5 'english exam is already registered for this class'\cf2\par
+\cf1 end\cf2\par
+\cf1 else\cf2\par
+\cf1 select\cf2  \cf3 @message\cf4 =\cf5 'hindi exam is already registered for this class'\cf2\par
+\cf1 end\cf2\par
+\cf1 else\cf2\par
+\cf1 select\cf2  \cf3 @message\cf4 =\cf5 'telugu exam is already registered for this class'\cf2\par
+\cf1 end\cf2\par
+\cf1 else\cf2\par
+\cf1 update\cf2  exams1 \cf1 set\cf2  telugu\cf4 =\cf3 @telugu\cf2 ,hindi\cf4 =\cf3 @hindi\cf2 ,english\cf4 =\cf3 @english\cf2 ,maths\cf4 =\cf3 @maths\cf2 ,science\cf4 =\cf3 @science\cf2 ,social\cf4 =\cf3 @social\cf2  \cf1 where\cf2  id\cf4 =\cf3 @id\cf2\par
+\cf1 end\cf2\par
+\par
+\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  exams1\cf0\f2\fs20\par
+\par
+\par
+\cf1\f0\fs24 .........................................\par
+\par
+\par
+\par
+\par
+create\cf2\f1  \cf1 proc\cf2  examsinsertion\par
+(\par
+\cf3 @telugu\cf2  \cf1 varchar\cf2 (20),\par
+\cf3 @hindi\cf2  \cf1 varchar\cf2 (20),\par
+\cf3 @english\cf2  \cf1 varchar\cf2 (20),\par
+\cf3 @maths\cf2  \cf1 varchar\cf2 (20),\par
+\cf3 @science\cf2  \cf1 varchar\cf2 (20),\par
+\cf3 @social\cf2  \cf1 varchar\cf2 (20)\par
+)\par
+\cf1 as\cf2  \cf1 begin\cf2\par
+\cf1 insert\cf2  \cf1 into\cf2  exams1(telugu,hindi,english,maths,science,social)\cf1 values\cf2 (\cf3 @telugu\cf2 ,\cf3 @hindi\cf2 ,\cf3 @english\cf2 ,\cf3 @maths\cf2 ,\cf3 @science\cf2 ,\cf3 @social\cf2 )\par
+\par
+\cf1 end\cf0\f2\fs20\par
+\par
+\cf1\f0\fs24 .........................................\par
+\par
+\par
+\par
+\par
+create\cf2\f1  \cf1 proc\cf2  emailproc\par
+(\par
+\cf3 @id\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @email\cf2  \cf1 varchar\cf2 (50)\par
+)\par
+\cf1 as\cf2  \cf1 begin\cf2\par
+\par
+\par
+\cf1 declare\cf2  \cf3 @error\cf2  \cf1 varchar\cf2 (50) \par
+\par
+\par
+\cf1 if\cf2  \cf4 not\cf2  \cf4 exists\cf2  (\cf1 SELECT\cf2  email \cf1 from\cf2  email\par
+\cf1 WHERE\cf2  email \cf4 =\cf2  \cf3 @email\cf2 )\par
+\par
+\cf1 if\cf2 (\cf3 @email\cf2  \cf4 !=\cf2  \cf4 null\cf2 )\par
+\cf1 set\cf2  \cf3 @error\cf4 =\cf5 'email already exists'\cf2\par
+\par
+\par
+\cf1 else\cf2\par
+\cf1 insert\cf2  \cf1 into\cf2  email(email) \cf1 values\cf2 (\cf3 @email\cf2 )\par
+\cf1 set\cf2  \cf3 @error\cf4 =null\cf2\par
+\par
+\cf1 return\cf2  \cf3 @error\cf2\par
+\par
+\par
+\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  email\par
+\par
+\par
+\par
+\cf1 end\f0\par
+.........................................\par
+\par
+\par
+\par
+\par
+create\cf2\f1  \cf1 proc\cf2  cursor_DisplayTable1\par
+(\par
+\cf3 @studentname\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @class\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @section\cf2  \cf1 varchar\cf2 (50),\par
+\cf3 @rollno\cf2  \cf1 varchar\cf2 (5)\par
+\par
+)\par
+\cf1 as\cf2  \cf1 begin\cf2\par
+\cf1 declare\cf2  \cf3 @telugu\cf2  \cf1 varchar\cf2 (10)\par
+\cf1 declare\cf2  \cf3 @hindi\cf2  \cf1 varchar\cf2 (10)\par
+\cf1 declare\cf2  \cf3 @english\cf2  \cf1 varchar\cf2 (10)\par
+\cf1 declare\cf2  \cf3 @maths\cf2  \cf1 varchar\cf2 (10)\par
+\cf1 declare\cf2  \cf3 @science\cf2  \cf1 varchar\cf2 (10)\par
+\cf1 declare\cf2  \cf3 @social\cf2  \cf1 varchar\cf2 (10)\par
+\cf1 declare\cf2  \cf3 @examtype\cf2  \cf1 varchar\cf2 (15)\par
+\cf1 declare\cf2  \cf3 @sqlstring\cf2  \cf1 varchar\cf2 (1000)\par
+\cf1 declare\cf2  \cf3 @studentname1\cf2  \cf1 varchar\cf2 (50)\par
+\cf1 declare\cf2  \cf3 @class1\cf2  \cf1 varchar\cf2 (10)\par
+\cf1 declare\cf2  \cf3 @section1\cf2  \cf1 varchar\cf2 (10)\par
+\cf1 declare\cf2  \cf3 @rollno1\cf2  \cf1 varchar\cf2 (10)\par
+\par
+\par
+\par
+\par
+\cf1 create\cf2  \cf1 table\cf2  #cursor_TempTable\par
+(\par
+subjectname \cf1 varchar\cf2 (20),\par
+UnitTest1 \cf1 varchar\cf2 (10) \cf1 default\cf2  \cf4 null\cf2 ,\par
+UnitTest2 \cf1 varchar\cf2 (10) \cf1 default\cf2  \cf4 null\cf2 ,\par
+UnitTest3 \cf1 varchar\cf2 (10) \cf1 default\cf2  \cf4 null\cf2 ,\par
+UnitTest4 \cf1 varchar\cf2 (10) \cf1 default\cf2  \cf4 null\cf2 ,\par
+Quaterly \cf1 varchar\cf2 (50) \cf1 default\cf2  \cf4 null\cf2 ,\par
+HalfYearly \cf1 varchar\cf2 (50) \cf1 default\cf2  \cf4 null\cf2 ,\par
+Annual \cf1 varchar\cf2 (50) \cf1 default\cf2  \cf4 null\cf2 ,\par
+studentname \cf1 varchar\cf2 (50)\cf1 default\cf2  \cf4 null\cf2 ,\par
+class \cf1 varchar\cf2 (5)\cf1 default\cf2  \cf4 null\cf2 ,\par
+section \cf1 varchar\cf2 (5)\cf1 default\cf2  \cf4 null\cf2 ,\par
+rollno \cf1 varchar\cf2 (5) \cf1 default\cf2  \cf4 null\cf2\par
+\par
+)\par
+\tab   \par
+\cf1 insert\cf2  \cf1 into\cf2  #cursor_TempTable (subjectname) \cf1 values\cf2 (\cf5 'telugu'\cf2 )\par
+\cf1 insert\cf2  \cf1 into\cf2  #cursor_TempTable (subjectname) \cf1 values\cf2 (\cf5 'hindi'\cf2 )\par
+\cf1 insert\cf2  \cf1 into\cf2  #cursor_TempTable (subjectname) \cf1 values\cf2 (\cf5 'english'\cf2 )\par
+\cf1 insert\cf2  \cf1 into\cf2  #cursor_TempTable (subjectname) \cf1 values\cf2 (\cf5 'maths'\cf2 )\par
+\cf1 insert\cf2  \cf1 into\cf2  #cursor_TempTable (subjectname) \cf1 values\cf2 (\cf5 'science'\cf2 )\par
+\cf1 insert\cf2  \cf1 into\cf2  #cursor_TempTable (subjectname) \cf1 values\cf2 (\cf5 'social'\cf2 )\par
+\par
+\par
+\cf1 select\cf2  \cf3 @studentname1\cf4 =\cf2  studentname \cf1 from\cf2  studentmarks \cf1 where\cf2  \par
+studentname\cf4 =\cf3 @studentname\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \cf4 and\cf2  class\cf4 =\cf3 @class\cf2  \par
+\cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \par
+\tab\par
+\tab\cf1 select\cf2  \cf3 @class1\cf4 =\cf2  class \cf1 from\cf2  studentmarks \cf1 where\cf2  \par
+studentname\cf4 =\cf3 @studentname\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \cf4 and\cf2  class\cf4 =\cf3 @class\cf2  \par
+\cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \par
+\par
+\cf1 select\cf2  \cf3 @section1\cf4 =\cf2  section \cf1 from\cf2  studentmarks \cf1 where\cf2  \par
+studentname\cf4 =\cf3 @studentname\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \cf4 and\cf2  class\cf4 =\cf3 @class\cf2  \par
+\cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \par
+\par
+\cf1 select\cf2  \cf3 @rollno1\cf4 =\cf2  rollno \cf1 from\cf2  studentmarks \cf1 where\cf2  \par
+studentname\cf4 =\cf3 @studentname\cf2  \cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \cf4 and\cf2  class\cf4 =\cf3 @class\cf2  \par
+\cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \par
+\cf1 if\cf2 ( \cf3 @studentname1\cf2  \cf4 <>\cf2  \cf5 ''\cf2  \cf4 and\cf2  \cf3 @class1\cf2  \cf4 <>\cf2  \cf5 ''\cf2  \cf4 and\cf2  \cf3 @section1\cf4 <>\cf5 ''\cf2  \cf4 and\cf2\par
+\cf3 @rollno1\cf2  \cf4 <>\cf5 ''\cf2 )\par
+\cf1 begin\cf2\par
+\tab\tab\cf1 declare\cf2  CursorForDisplay \cf1 cursor\cf2  \cf1 for\cf2  \par
+\tab\tab\cf1 select\cf2  \cf6 isnull\cf2 (telugu,\cf5 '-'\cf2 ),\cf6 isnull\cf2 (hindi,\cf5 '-'\cf2 ),\cf6 isnull\cf2 (english,\cf5 '-'\cf2 ),\par
+\tab\tab\cf6 isnull\cf2 (maths,\cf5 '-'\cf2 ),\cf6 isnull\cf2 (science,\cf5 '-'\cf2 ),\cf6 isnull\cf2 (social,\cf5 '-'\cf2 ),\par
+\tab\tab examtype\par
+\tab\tab\cf1 from\cf2  studentmarks \cf1 where\cf2  studentname\cf4 =\cf3 @studentname\cf2  \par
+\tab\tab\cf4 and\cf2  rollno\cf4 =\cf3 @rollno\cf2  \cf4 and\cf2  class\cf4 =\cf3 @class\cf2  \cf4 and\cf2  section\cf4 =\cf3 @section\cf2  \par
+\tab\tab\cf1 order\cf2  \cf1 by\cf2  examtype\par
+\tab\tab\par
+\tab\tab\par
+\tab\tab\cf1 open\cf2  CursorForDisplay\par
+\tab\tab\par
+\tab\tab\cf1 fetch\cf2  \cf1 next\cf2  \cf1 from\cf2  CursorForDisplay \cf1 into\cf2  \cf3 @telugu\cf2 ,\cf3 @hindi\cf2 ,\par
+\tab\tab\cf3 @english\cf2 ,\cf3 @maths\cf2 ,\cf3 @science\cf2 ,\cf3 @social\cf2 ,\cf3 @examtype\cf2\par
+\tab\par
+\par
+\tab\cf1 while\cf2  \cf6 @@FETCH_STATUS\cf2  \cf4 =\cf2  0\par
+\tab\cf1 begin\cf2\par
+\tab\par
+\tab\cf1 set\cf2  \cf3 @sqlstring\cf4 =\cf5 'update #cursor_TempTable set '\cf4 +\cf3 @examtype\cf4 +\cf5 '='''\cf4 +\cf3 @telugu\cf4 +\cf5 ''' \par
+\tab where subjectname=''telugu'';\par
+\tab\par
+\tab update #cursor_TempTable set '\cf4 +\cf3 @examtype\cf4 +\cf5 '='''\cf4 +\cf3 @hindi\cf4 +\cf5 ''' where subjectname=''hindi'';\par
+\tab\par
+\tab update #cursor_TempTable set '\cf4 +\cf3 @examtype\cf4 +\cf5 '='''\cf4 +\cf3 @english\cf4 +\cf5 ''' where subjectname=''english'';\par
+\tab\par
+\tab update #cursor_TempTable set '\cf4 +\cf3 @examtype\cf4 +\cf5 '='''\cf4 +\cf3 @maths\cf4 +\cf5 ''' where subjectname=''maths'';\par
+\tab\par
+\tab update #cursor_TempTable set '\cf4 +\cf3 @examtype\cf4 +\cf5 '='''\cf4 +\cf3 @science\cf4 +\cf5 ''' where subjectname=''science'';\par
+\tab\par
+\tab update #cursor_TempTable set '\cf4 +\cf3 @examtype\cf4 +\cf5 '='''\cf4 +\cf3 @social\cf4 +\cf5 ''' where subjectname=''social'';\par
+\par
+\tab  \par
+\par
+update #cursor_TempTable set studentname='''\cf4 +\cf3 @studentname\cf4 +\cf5 ''' ;\par
+\tab update #cursor_TempTable set class='''\cf4 +\cf3 @class\cf4 +\cf5 ''' ;\par
+\tab update #cursor_TempTable set section='''\cf4 +\cf3 @section\cf4 +\cf5 ''' ;\par
+\tab update #cursor_TempTable set rollno='''\cf4 +\cf3 @rollno\cf4 +\cf5 ''' ; '\cf2\par
+\tab\par
+\tab\par
+\par
+\par
+\tab\cf1 exec\cf2  (\cf3 @sqlstring\cf2 )\par
+\par
+\par
+\tab\cf1 fetch\cf2  \cf1 next\cf2  \cf1 from\cf2  CursorForDisplay \cf1 into\cf2  \cf3 @telugu\cf2 ,\cf3 @hindi\cf2 ,\par
+\tab\cf3 @english\cf2 ,\cf3 @maths\cf2 ,\cf3 @science\cf2 ,\cf3 @social\cf2 ,\cf3 @examtype\cf2\par
+\par
+\tab\cf1 end\cf2\par
+\cf1 close\cf2  CursorForDisplay;\par
+\cf1 deallocate\cf2  CursorForDisplay\par
+\tab\cf1 end\cf2\par
+\par
+\par
+\cf1 else\cf2\par
+\par
+\tab\cf1 begin\cf2\par
+\tab\par
+\tab\cf1 update\cf2  #cursor_TempTable \cf1 set\cf2  studentname\cf4 =\cf5 ''\cf4 +\cf3 @studentname\cf4 +\cf5 ''\cf2 ,\par
+\tab class\cf4 =\cf5 ''\cf4 +\cf3 @class\cf4 +\cf5 ''\cf2  ,section\cf4 =\cf5 ''\cf4 +\cf3 @section\cf4 +\cf5 ''\cf2 ,\par
+\tab rollno\cf4 =\cf5 ''\cf4 +\cf3 @rollno\cf4 +\cf5 ''\cf2   \par
+\tab\cf1 end\cf2\par
+\cf1 select\cf2  \cf4 *\cf2  \cf1 from\cf2  #cursor_TempTable \par
+\cf1 drop\cf2  \cf1 table\cf2  #cursor_TempTable\par
+\par
+ \par
+\par
+\cf1 end\par
+\par
+\par
+\par
+\f0 .........................................\cf0\f2\fs20\par
+}
+ 

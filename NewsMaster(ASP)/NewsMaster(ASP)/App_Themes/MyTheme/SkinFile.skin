@@ -1,0 +1,9 @@
+<asp:Label SkinID="BreakingNews" runat="server" Font-Bold="True" Font-Names="Verdana" Font-Size="Large"
+            ForeColor="Red"></asp:Label>
+<asp:HyperLink SkinID="MenuLinks" runat="server" Font-Names="Arial"/>            
+<asp:Label SkinID="NewsTitle" runat="server" Font-Bold="False" Font-Names="Book Antiqua"
+            Font-Size="X-Large" ForeColor="Magenta"></asp:Label>
+<asp:Label SkinID="Description" runat="server" Font-Bold="False" Font-Names="Verdana"
+            Font-Size="Medium" ForeColor="Black" Font-Italic="True"></asp:Label>
+<asp:Label SkinID="Details" runat="server" Font-Bold="False" Font-Names="Verdana"
+            Font-Size="Medium" ForeColor="Black" Font-Italic="False"></asp:Label>

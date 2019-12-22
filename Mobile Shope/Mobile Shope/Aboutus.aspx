@@ -1,0 +1,52 @@
+﻿<%@ Page Language="C#" MasterPageFile="~/Home.master" AutoEventWireup="true" CodeFile="Aboutus.aspx.cs" Inherits="Aboutus" Title="MObile Shope - About US" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <span style="FONT-SIZE: 10pt; COLOR: red; LINE-HEIGHT: 115%; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG"><span style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG"><span style="FONT-SIZE: 10pt; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG"><font color="#000000">
+<p  style="MARGIN: 0in 0in 10pt; DIRECTION: ltr; unicode-bidi: embed; TEXT-ALIGN: center" align="center">
+    <b>
+    <span style="FONT-SIZE: 20pt; COLOR: red; LINE-HEIGHT: 115%; mso-bidi-language: AR-EG">
+    <font face="Areail">Introduction About US<!--?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /--><o:p></o:p></font></span></b></p>
+<p  style="MARGIN: 0in 0in 10pt; unicode-bidi: embed; TEXT-ALIGN: left"><b><span style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG">Mobile Shop is one of the most important companies in the telecommunications field in India. We have a full range of mobiles and accessories that are available in the Indain market, moreover we are strategic partners with Vodafone India, and we provide all Vodafone products and services in our stores. <o:p></o:p></span></b></p>
+<p  style="MARGIN: 0in 0in 10pt; unicode-bidi: embed; TEXT-ALIGN: left"><b><span style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG">Mobile Shop is the exclusive distributor in India for mobile phone that works on Sony Ericsson, LG and Motorola; also we present many other products related one way or another to the technology field such as Marhaba cards, Nemra one cards, One card, Mobi2safe cards….etc, also we have more than installment system in order to matching all our customers’ needs, trade in system, most of Radio shack® products, telesales team, and home delivery. And day by day we try to increase the services and product that we have at our branches.<span style="mso-spacerun: yes">    </span><o:p></o:p></span></b></p>
+<p  style="MARGIN: 0in 0in 10pt; unicode-bidi: embed; TEXT-ALIGN: left"><b><span style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG"><o:p> </o:p></span></b></p>
+<p  style="MARGIN: 0in 0in 10pt; unicode-bidi: embed; TEXT-ALIGN: left"><span style="FONT-SIZE: 10pt; COLOR: red; LINE-HEIGHT: 115%; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG">- <b><u>Our Vision<o:p></o:p></u></b></span></p>
+<p  style="MARGIN: 0in 0in 10pt; unicode-bidi: embed; TEXT-ALIGN: left"><span style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG">To be the biggest retail chain in India specialized in telecommunication Solution, having best assortment and environment by recruiting best caliber in the field.<u><o:p></o:p></u></span></p>
+<p  style="MARGIN: 0in 0in 10pt; unicode-bidi: embed; TEXT-ALIGN: left"><b><span style="FONT-SIZE: 10pt; COLOR: red; LINE-HEIGHT: 115%; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG">- <u>Our Mission <o:p></o:p></u></span></b></p>
+<p  style="MARGIN: 0in 0in 10pt 0.5in; TEXT-INDENT: -0.25in; LINE-HEIGHT: normal; unicode-bidi: embed; TEXT-ALIGN: left; mso-add-space: auto; mso-list: l0 level1 lfo1"><span style="FONT-SIZE: 10pt; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG; mso-fareast-font-family: Verdana; mso-bidi-font-family: Verdana"><span style="mso-list: Ignore">1.<span style="FONT: 7pt &#39;"></span></span></span><span dir="ltr"></span><span style="FONT-SIZE: 10pt;">Full Range of Products in Mobiles and Mobiles Accessories.<o:p></o:p></span></p>
+<p  style="MARGIN: 0in 0in 10pt 0.5in; TEXT-INDENT: -0.25in; LINE-HEIGHT: normal; unicode-bidi: embed; TEXT-ALIGN: left; mso-add-space: auto; mso-list: l0 level1 lfo1"><span style="FONT-SIZE: 10pt; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG; mso-fareast-font-family: Verdana; mso-bidi-font-family: Verdana"><span style="mso-list: Ignore">2.<span style="FONT: 7pt &#39;"></span></span></span><span dir="ltr"></span><span style="FONT-SIZE: 10pt;">Friendly Environment based on very Special Designs and Colors.</span><span lang="AR-EG" dir="rtl" style="FONT-SIZE: 10pt; FONT-FAMILY: &#39;Arial&#39; mso-ascii-font-family: Verdana; mso-hansi-font-family: Verdana"><o:p></o:p></span></p>
+<p  style="MARGIN: 0in 0in 10pt 0.5in; TEXT-INDENT: -0.25in; LINE-HEIGHT: normal; unicode-bidi: embed; TEXT-ALIGN: left; mso-add-space: auto; mso-list: l0 level1 lfo1"><span style="FONT-SIZE: 10pt; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG; mso-fareast-font-family: Verdana; mso-bidi-font-family: Verdana"><span style="mso-list: Ignore">3.<span style="FONT: 7pt &#39;"></span></span></span><span dir="ltr"></span><span style="FONT-SIZE: 10pt;">Intensive Training Programs to achieve maximum Customer Service.</span><span lang="AR-EG" dir="rtl" style="FONT-SIZE: 10pt; FONT-FAMILY: &#39;Arial&#39;mso-ascii-font-family: Verdana; mso-hansi-font-family: Verdana"><o:p></o:p></span></p>
+<p  style="MARGIN: 0in 0in 10pt;  unicode-bidi: embed; TEXT-ALIGN: left"><span dir="ltr"></span><span style="FONT-SIZE: 10pt; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG"><span dir="ltr"></span><span style="mso-spacerun: yes">   </span>Significant Distribution to all areas in Cairo and other Cities of India<o:p></o:p></span></p>
+<p  style="MARGIN: 0in 0in 10pt; LINE-HEIGHT: normal; unicode-bidi: embed; TEXT-ALIGN: left"><b><u><span style="FONT-SIZE: 10pt; COLOR: red; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG">History of Mobile Shop</span></u></b><span style="FONT-SIZE: 10pt; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG">:<o:p></o:p></span></p>
+<p  style="MARGIN: 0in 0in 10pt; unicode-bidi: embed; TEXT-ALIGN: left"><span style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG">Mobile Shop was established on 2006; now our branches reach 105 branches around the country. Mobile Shop is the largest retail chain in one country.<o:p></o:p></span></p>
+<p  style="MARGIN: 0in 0in 10pt; LINE-HEIGHT: normal; unicode-bidi: embed; TEXT-ALIGN: left"><span style="FONT-SIZE: 10pt; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG">The brands which are available in mobile shop are below:</span></p>
+<p  style="MARGIN: 0in 0in 10pt; LINE-HEIGHT: normal; unicode-bidi: embed; TEXT-ALIGN: left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        Vodafone&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <span style="FONT-SIZE: 10pt; COLOR: red; LINE-HEIGHT: 115%; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG"><span style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG"><span style="FONT-SIZE: 10pt; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG"><font color="#000000">
+        Nokia&nbsp;</font></span></span></span></p>
+<p  style="MARGIN: 0in 0in 10pt; DIRECTION: ltr; LINE-HEIGHT: normal; unicode-bidi: embed; TEXT-ALIGN: left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Image ID="Image1" runat="server" Height="131px" 
+            ImageUrl="~/images/vodafone logo.JPG" Width="228px" />
+ <span style="FONT-SIZE: 10pt; COLOR: red; LINE-HEIGHT: 115%; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG"><span style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG"><span style="FONT-SIZE: 10pt; FONT-FAMILY: &#39;Verdana&#39;,&#39;sans-serif&#39;; mso-bidi-language: AR-EG"><font color="#000000">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Image ID="Image5" runat="server" Height="135px" 
+            ImageUrl="~/images/images (1).jpg" Width="211px" />
+        </font></span></span></span></p>
+    <p class="MsoNormal" style="MARGIN: 0in 0in 10pt; DIRECTION: ltr; LINE-HEIGHT: normal; unicode-bidi: embed; TEXT-ALIGN: left">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        &nbsp;Motorola</p>
+    <p class="MsoNormal" style="MARGIN: 0in 0in 10pt; DIRECTION: ltr; LINE-HEIGHT: normal; unicode-bidi: embed; TEXT-ALIGN: left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Image ID="Image4" runat="server" Height="132px" 
+            ImageUrl="~/images/images (7).jpg" Width="227px" />
+    </p>
+    <p class="MsoNormal" style="MARGIN: 0in 0in 10pt; DIRECTION: ltr; LINE-HEIGHT: normal; unicode-bidi: embed; TEXT-ALIGN: left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p></script>
+</form>
+            </td>
+        </tr>
+    </tbody></table>
+
+
+</body></html>
+    </font></span></span></span></asp:Content>
+

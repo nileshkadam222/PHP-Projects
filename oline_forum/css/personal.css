@@ -1,0 +1,127 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+
+font-size:12px;
+}
+p, h1, form, button{border:0; margin:0; padding:0;}
+.spacer{clear:both; height:1px;}
+/* ----------- My Form ----------- */
+
+#top_bars{
+	background:url(../images/tooplate_midplate.png) repeat;
+	border:2px solid #ccc;
+	box-shadow:0 0 35px 0 #2A1F00;
+	
+	transition:box-shadow .6s ease;
+   -o-transition:box-shadow .6s ease;
+   -moz-transition:box-shadow .6s ease;
+   -webkit-transition:box-shadow .6s ease;
+  
+   transition:background .6s ease;
+   -o-transition:background .6s ease;
+   -moz-transition:background .6s ease;
+   -webkit-transition:background .6s ease;
+   margin-bottom:110px;
+	
+	clear: both;
+	height: 90px;
+	padding:10px;
+	margin-bottom: 9px;
+
+}
+#top_bars:hover {  background:black;
+		box-shadow:0 0 35px 0 gold;
+			transition:box-shadow .6s ease;
+   -o-transition:box-shadow .6s ease;
+   -moz-transition:box-shadow .6s ease;
+   -webkit-transition:box-shadow .6s ease;
+   
+     
+	}
+
+#top_bars h2 {
+	color: #bd9213;
+}
+
+#top_bars p {
+	font-size: 12px;
+	color: #7f6d4e;
+}
+.myform{
+	padding:20px;
+background-repeat:repeat;
+margin-left:80px;
+margin-right:80px;
+}
+
+#term p{}#term input{width:15px;border:1px inset #00DF00; border-rdius:3px;}
+h1 {
+font-size:14px;
+font-weight:bold;
+margin-bottom:8px;
+}
+p{
+font-size:11px;
+color:#666666;
+margin-bottom:20px;
+
+padding-bottom:10px;
+}
+label{
+	display: block;
+	margin-left:25px;
+	width: 300px;
+	margin-right: 10px;
+	font-size: 14px;
+	font-weight:bold;	
+	color: #333;
+}
+font{
+
+	margin-left:25px;
+
+}
+.small{
+
+}
+
+input{
+	margin-left:25px;
+	width: 574px;
+	padding: 5px;
+	background: #fff;
+	border: 3px solid #ccc;
+	border-radius:3px;
+	color: #333; 
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 14px;
+	margin-top: 5px;
+	box-shadow:0 0 2px 0 blue;
+}
+select{
+	margin-left:25px;
+	width: 574px;
+	padding: 5px;
+	background: #fff;
+	border: 3px solid #ccc;
+	border-radius:3px;
+	color: #333; 
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 14px;
+	margin-top: 5px;
+	box-shadow:0 0 2px 0 blue;
+}
+button{
+	width: 574px;
+	padding: 5px;
+	background: #fff;
+	border: 3px solid #ccc;
+	border-radius:3px;
+	color: #333; 
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 12px;
+	margin-top: 5px;
+	box-shadow:0 0 2px 0 blue;
+}

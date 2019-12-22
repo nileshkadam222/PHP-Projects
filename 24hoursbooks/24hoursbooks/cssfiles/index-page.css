@@ -1,0 +1,333 @@
+/* 
+    Document   : mystyle
+    Created on : Jul 19, 2013, 12:58:22 PM
+    Author     : Ranjan
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+div.MainContainer
+    {
+    margin : 0px auto;
+    height:auto;
+    width:1100px;
+    /*background-color: red;*/
+    /*overflow: scroll;*/
+    }
+div.HeaderContainer
+    {
+    height:auto;
+    width:1100px;
+    }
+
+div.Logo
+    {
+    position: absolute;
+    height:120px;
+    width:328px;
+    background-image:url('../Images/logo.png');
+    }
+div.HeaderContent
+    {
+    margin-left:328px;
+    height:120px;
+    width:772px;
+    /*background-color:yellow;*/
+    }
+
+div.HeaderContentMenu
+    {
+    /*margin-left:328px;*/
+    /*padding-top: 5px;*/
+    height:40px;
+    width:772px;
+    /*background-color:greenyellow;*/
+    }
+div.LogedUserContent
+    {
+    
+    height:30px;
+    width:772px;
+    /*background-color: aqua;*/
+    }
+div.SearchContent
+    {
+    height:50px;
+    width:772px;
+    /*background-color:blue;*/
+    }
+div.SearchResultBox
+            {
+                float:left;
+                margin-top:10px;
+                height:150px;
+                width:890px;
+                border:1px solid silver;
+                background-color:white;
+            }   
+#header-contactus-link #header-signin-link #header-signup-link ,a
+{
+    color: blue;
+    text-decoration: none;
+}
+
+#header-contactus-link #header-signin-link #header-signup-link, a:hover
+{
+    color: blue;
+    text-decoration: underline;
+}
+  
+div.MenuContainer
+    {
+    /*border:2px solid green;*/
+    height:35px;
+    width:1100px;
+    background-color: darkblue;
+    border-bottom-style: solid;
+    border-color: white;
+    background-image:url('../Images/menu-background.jpg');
+    /*color:white;*/
+    }
+
+div.Banner 
+    {
+    height:35px;
+    width:1100px;
+    background-image:url('../Images/banner.jpg');
+    }
+div.Banner td
+{
+  color: darkblue;
+  font-size: 14px;
+  padding:0px 15px 0px 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+} 
+div.DisplayMessages
+{
+    border-radius: 10px;
+    border: 1px solid red;
+    margin: 2px 0px;
+    height: 50px;
+    width: 1100px;
+    /*background-color: white;*/
+    background-color:#FFA07A ;
+}
+div.SideBarMenu
+{
+    position: absolute;
+    width: 180px;
+    height: auto;
+    background-color: silver;
+    border: 1px solid  activecaption;
+    box-shadow: 5px 5px 5px #888888;
+}
+div.MainBody
+{
+    margin-top: 10px;
+    width: 1100px;
+    height: auto;
+}
+div.HomePageDisplayer
+{
+    margin-top: 10px;
+    width: 1100px;
+    height: auto;
+}
+div.BannersDisplayer
+{
+    margin-left: 195px;
+    margin-top: 10px;
+    width: 900px;
+    height: auto;
+}
+div.BooksDisplayer
+{
+    margin-left: 195px;
+    margin-top: 10px;
+    width: 905px;
+    height:1000px;
+}
+div.SortBy
+{
+    margin-left: 22px;
+    margin-top: 10px;
+    padding: 10px 20px;
+    width: 819px;
+    font-size: 14px;
+    background-color: buttonface;
+    border: 1px solid darkblue;
+}
+div.BookDetailsDisplayer
+{
+    margin-top: 10px;
+    width: 1100px;
+    height:1000px;
+}
+div.Banner1
+{
+    border: 2px solid darkblue;
+    width: 710px;
+    height: 400px;   
+}
+div.Banner2
+{
+    border: 2px solid darkblue;
+    margin-top: -404px;
+    width: 180px;
+    height: 195px;
+    margin-left: 720px;
+    background-image:url('../Images/giftbook.jpg');
+}
+
+div.Banner3
+{
+    border: 2px solid darkblue;
+    margin-top: 6px;
+    width: 180px;
+    height:195px;
+    margin-left: 720px;
+    background-image:url('../Images/combooffer.png');
+}
+div.Banner4
+{
+    
+    margin-top: 20px;
+    width: 905px;
+    height:300px;
+    /*background-color: red;*/
+    /*box-shadow:0px 0px 5px #888888;*/
+    border-bottom:3px solid green;
+}
+div.BookContainer
+{
+    float: left;
+    margin: 10px 22px;
+    border: 1px solid silver;
+    height: 245px;
+    width: 180px;
+}
+
+div.Footer
+    {
+    margin:-10px;
+    border-top-style: solid;
+    border-top-width: 10px;
+    border-top-color: darkcyan;
+    background-color: cadetblue;
+    }
+
+ div.FooterContainer
+    {
+    margin:0px auto 0px auto;
+    /*height:400px;*/
+    width:1100px;
+    background-color: darkblue;
+    border:1px solid white;
+    border-top: none;
+    }
+
+ div.FooterQuickLink
+ {
+     padding: 20px;
+     position: absolute;
+     height: auto;
+     width: 300px;
+     color: white;
+     /*background-color: red;*/
+     font-size: 16px;
+ }
+ div.FooterQuickLink a
+ {
+     color: white;
+     text-decoration: none;
+ }
+ div.Subscribe
+ {
+     padding: 20px;
+     margin-left: 340px;
+     height: auto;
+     width: 720px;
+     color: white;
+     /*background-color: green;*/
+ }
+
+
+
+
+#menu ul {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        line-height: normal;
+}
+
+#menu li 
+{
+        /*display: block;*/
+        float: left;
+}
+
+#menu a 
+{
+        display: block;
+        float: left;
+        padding: 10px 25px 10px 25px;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #FFFFFF;
+}
+
+#menu a:hover 
+{ 
+        text-decoration: none; 
+        padding: 10px 25px 10px 25px;
+        background-image:url(../Images/menu-hover-background.jpg);
+        /*background-color: activeborder;*/
+        
+        
+}
+
+div.SignIn
+{
+    padding: 0px 20px;
+    position: absolute;
+    height: auto;
+    width: 460px;
+    /*background-color: aqua;*/
+}
+div.SignIn h2 ,span
+{
+    color: cornflowerblue;
+}
+div.SignIn h4
+{
+    color: darkblue;
+}
+div.SignUp h2
+{
+    color: cornflowerblue;
+}
+div.SignUp h4
+{
+    color: darkblue;
+}
+div.SignUp
+{
+    /*margin-top: -20px;*/
+    margin-left: 500px;
+    padding: 0px 20px;
+    height: auto;
+    width: 560px;
+    /*background-color: chocolate;*/
+}
+div.FooterContainer input 
+{
+   color: blue;
+   background-color:buttonface;
+   border-radius: 5px;
+   padding: 5px;
+   font-size: 14px;
+}

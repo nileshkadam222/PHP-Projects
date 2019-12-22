@@ -1,0 +1,61 @@
+#flip-tabs{
+	width:400px;
+	height:300px;
+	margin:23px 10px; position:relative;
+	
+}
+#flip-navigation{
+	margin:0 0 10px; padding:0;
+	list-style:none;
+	
+}
+#flip-navigation li{ 
+	display:inline;
+
+	
+}
+#flip-navigation li a{
+	text-decoration:none; padding:10px; 
+	margin-right:0px;
+	font-weight:bold;
+	color:#CE4912; outline:none;
+	border-top-left-radius:7px red;
+	font-family:Arial; font-size:12px; text-transform:uppercase;
+}
+#flip-navigation li a:hover{
+	background:#999; 
+	color:#f0f0f0;border-right:1px solid;
+	border-top-left-radius:7px;
+	border-top-right-radius:7px;
+}
+#flip-navigation li.selected a{
+	background:#FFDC42;line-height: 16px;
+	color:#4D4D4D;font-weight: bold;
+	
+	border-top-left-radius:7px solid red;
+	border-top-right-radius:7px;-moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   -webkit-border-radius:9px;
+   	/*-webkit-border-top-left-radius:7px solid red;-webkit-box-shadow: 3px 3px 5px 6px #ccc;
+	-webkit-border-top-right-radius:7px;*/
+}
+#flip-container{  
+	width:350px;
+	font-family:Arial; font-size:13px;
+}
+#flip-container div{ 
+	background:#fff;border-radius:10px;
+}
+#flip-container div ul{
+	background:#f9f9f9;height:175px;
+	border:1px solid #f0f0f0;
+	margin:0; padding:15px 5px;
+	list-style-position:inside;border-radius:20px;
+}
+#flip-container div ul li{
+	padding:5px 0;
+}
+#flip-container div ul.orange{ background:; }
+#flip-container div ul.green{ background:; }
+#flip-container div ul.blue{ background:;}

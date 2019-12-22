@@ -1,0 +1,121 @@
+﻿<%@ Page Language="C#" MasterPageFile="~/Staff.master" AutoEventWireup="true" CodeFile="Profile.aspx.cs" Inherits="Profile" Title="Untitled Page" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="cpStaffDetails" Runat="Server">
+    <table>
+    <tr>
+    <td>
+        <asp:Label ID="LblFirstName" runat="server" Text="First Name"></asp:Label>
+    </td>
+    <td>
+        <asp:TextBox ID="TxtFirstname" runat="server"></asp:TextBox>
+    </td>
+    <td style="width: 249px">
+        <asp:RequiredFieldValidator ID="RFVFirstname" runat="server" ControlToValidate="TxtFirstname" ErrorMessage="Enter First Name"></asp:RequiredFieldValidator>
+    </td>
+    </tr>
+    
+    <tr>
+    <td>
+        <asp:Label ID="LblLastName" runat="server" Text="Last Name"></asp:Label>
+    </td>
+    <td>
+        <asp:TextBox ID="TxtLastname" runat="server"></asp:TextBox>
+    </td>
+    <td style="width: 249px">
+        <asp:RequiredFieldValidator ID="RFVLastname" runat="server" ControlToValidate="TxtLastname" ErrorMessage="Enter Last Name"></asp:RequiredFieldValidator>
+    </td>
+    </tr>
+    
+    
+     <tr>
+    <td>
+        <asp:Label ID="LblDob" runat="server" Text="Date Of Birth"></asp:Label>
+    </td>
+    <td>
+        <asp:Calendar ID="CalDob" runat="server"></asp:Calendar>
+          <asp:TextBox ID="TxtDob" runat="server"></asp:TextBox>
+    </td>
+   
+  
+    <td style="width: 249px">
+        <asp:RequiredFieldValidator ID="RFV" runat="server" ControlToValidate="TxtDob" ErrorMessage="Select Date Of Birth"></asp:RequiredFieldValidator>
+    </td>
+    </tr>
+    <tr>
+    <td>
+        <asp:Label ID="LblAddress" runat="server" Text="Address"></asp:Label>
+    </td>
+    <td>
+        <asp:TextBox ID="TxtAddress" runat="server" TextMode="MultiLine"></asp:TextBox>
+    </td>
+    <td style="width: 249px">
+        <asp:RequiredFieldValidator ID="RFVAddress" runat="server" ControlToValidate="TxtAddress" ErrorMessage="Enter Address"></asp:RequiredFieldValidator>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <asp:Label ID="LblContactNumber" runat="server" Text="Contact Number"></asp:Label>
+    </td>
+    <td>
+        <asp:TextBox ID="TxtContactNumber" runat="server"></asp:TextBox>
+    </td>
+    <td style="width: 249px">
+        <asp:RequiredFieldValidator ID="RFVMobileNumber" ControlToValidate="TxtContactNumber" runat="server" ErrorMessage="Enter Contact Number"></asp:RequiredFieldValidator>
+    </td>
+    </tr>
+    
+    <tr>
+    <td>
+        <asp:Label ID="LblEmailid" runat="server" Text="Email Id"></asp:Label>
+    </td>
+    <td>
+        <asp:TextBox ID="TxtEmailid" runat="server"></asp:TextBox>
+    </td>
+    <td style="width: 249px">
+        <asp:RequiredFieldValidator ID="RFVEmailid" runat="server" ControlToValidate="TxtEmailid" ErrorMessage="Enter Email Id"></asp:RequiredFieldValidator>
+    </td>
+    </tr>
+    
+    <tr>
+    <td>
+       
+    <asp:Label ID="LblDesignation" runat="server" Text="Designation"></asp:Label>
+    </td>
+    <td>
+        <asp:DropDownList ID="DDDLDesignation" runat="server">
+        </asp:DropDownList>
+    </td>
+    <td style="width: 249px">
+        <asp:RequiredFieldValidator ID="RFVDesignation" ControlToValidate="DDDLDesignation" InitialValue="Select"  runat="server" ErrorMessage="Select Designation"></asp:RequiredFieldValidator>
+    </td>
+    </tr>
+    <tr>
+    <td style="height: 24px">
+        <asp:Label ID="Lbldepartment" runat="server" Text="Department"></asp:Label>
+    </td>
+    <td style="height: 24px">
+        <asp:DropDownList ID="DDDLDepartment" runat="server">
+        </asp:DropDownList>
+    </td>
+    <td style="width: 249px; height: 24px;">
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" InitialValue="Select" runat="server" ControlToValidate="DDDLDepartment" ErrorMessage="Select Department"></asp:RequiredFieldValidator>
+    </td>
+    </tr>
+   
+   <tr>
+   <td align="center">
+       <asp:Button ID="BtnEdit" runat="server" Text="Edit" onclick="BtnEdit_Click1" />
+   </td>
+   <td align="center">
+       <asp:Button ID="BtnUpdate" runat="server" Text="Update" 
+           onclick="BtnUpdate_Click" style="height: 26px" />
+   </td>
+   <td style="width: 249px">
+   <asp:Button ID="BtnCancel" runat="server" Text="Cancel" onclick="BtnCancel_Click" />
+   </td>
+   
+   </tr>
+    
+    </table>
+</asp:Content>
+

@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin_masterpage.master.cs" Inherits="Admin_Admin_masterpage" %>
+
+<%@ Register assembly="FlashControl" namespace="Bewise.Web.UI.WebControls" tagprefix="Bewise" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body background="../Image/back/star_space_background.jpg">
+    <form id="form1" runat="server">
+    <table align="center" border="1" cellspacing="0" bordercolor="Black">
+    
+    <tr>
+    <td height="70" width="900" bgcolor="Black">
+        <Bewise:FlashControl ID="FlashControl1" runat="server" Height="70px" 
+            Loop="True" MovieUrl="~/flash new/1234.swf" Width="900px" />
+        </td>
+    </tr>
+    
+    <tr>
+    <td height="170" width="900" bgcolor="Black">
+        <asp:Image ID="Image1" runat="server" Height="170px" 
+            ImageUrl="~/Image/LogoFinal.jpg" Width="900px" />
+        </td>
+    </tr>
+    
+    <tr>
+    <td  width="900" bgcolor="Black" height="30">
+        <marquee><asp:Label ID="Label2" runat="server" Text="Welcome Administrator." 
+            Font-Bold="True" Font-Size="X-Large" ForeColor="Yellow"></asp:Label></td>
+    </marquee>
+    </tr>
+    
+    <tr>
+    <td width="900" height="156">
+ <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="900" height="156" >
+<param name="movie" value="Raj1.swf" />
+<param name="quality" value="high" />
+<param name="allowScriptAccess" value="always" />
+<param name="wmode" value="transparent" />
+<embed src="Raj1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="900" height="156" allowScriptAccess="always" wmode="transparent">
+</embed></object>
+    
+    
+    
+    </td>
+    </tr>
+    
+    <tr>
+    <td> <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder></td>
+    </tr>
+    
+     <td colspan ="2" style="color: #FFFFFF; font-weight: bold;" width="900" height="10" bgcolor="Black">
+        &copy<asp:Label ID="Label1" runat="server" Font-Bold="True" ForeColor="White" 
+            Text="2009 VIP Airlines Limited"></asp:Label>
+     </td>
+    
+    </table>
+    
+    
+       
+    
+    </form>
+</body>
+</html>

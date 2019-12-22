@@ -1,0 +1,51 @@
+Visual Basic for Application
+
+Batch file stores the commands.
+All the commands in batch file are executed in a sequence.
+
+Similarly, macro is nothing but collection of commands.
+
+VBA
+===
+
+Object 
+   |
+Properties
+   |
+method 
+
+For Developer mode, Go to Menu Bar, Right click on it->Excel Options opens up -> Popular -> check the option Show Developer tab in the Ribbon
+
+object.method
+
+For e.g. If you want to refer cell A1 
+So the object is cell B1, and the cell is in sheet1
+so the method will be sheet1.Range("A1").Value=10
+or sheet1.cells(1,1).value=15
+
+In VB you can write:
+
+Private Sub CommandButton1_Click()
+MsgBox ("Hello ")
+Sheet1.Range("A1").Value = 10
+Sheet1.Range("C5").Select
+Sheet1.Range("B2").Value = 50
+Sheet1.Range("C3").Value = Sheet1.Range("A1").Value + Sheet1.Range("B2").Value
+
+End Sub
+
+*************************************************************************
+
+Dim <variable name> as <datatype>
+
+Dim x as integer
+Dim i as Double
+Dim y as String
+
+For Loop: 
+
+for i=1 to 10
+-------------
+-------------
+next
+

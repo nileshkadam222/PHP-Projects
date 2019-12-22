@@ -1,0 +1,3 @@
+﻿ <asp:Label SkinId="blue" runat="server" Text="Label" Font-Bold="True" 
+        Font-Names="Comic Sans MS" Font-Size="X-Large" Font-Underline="True" 
+        ForeColor="Aqua"></asp:Label>

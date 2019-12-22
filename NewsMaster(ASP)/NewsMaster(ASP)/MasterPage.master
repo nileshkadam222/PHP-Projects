@@ -1,0 +1,62 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<%@ Register Src="~/WebUserControlFooter.ascx" TagPrefix="UC" TagName="Footer"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table height="600" width="750" align="center" border="1" cellspacing="0" bordercolor="Black">
+    <tr height="100">
+    <td colspan="3">
+    <embed width="100%" height="100%" src="imgs/title.swf"/>
+    </td>
+    </tr>
+    <tr height="10">
+    <td colspan="3">
+    <asp:DataList id="DataListBreakingNews" runat="server" DataSourceID="SqlDataSourceBreakingNews"><ItemTemplate>
+<asp:Label id="breaking_news_descriptionLabel" runat="server" __designer:wfdid="w14" 
+            Text='<%# Eval("breaking_news_description") %>'></asp:Label> 
+</ItemTemplate>
+</asp:DataList><asp:SqlDataSource id="SqlDataSourceBreakingNews" runat="server" __designer:wfdid="w2" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT breaking_news_description FROM breaking_news_master WHERE (breaking_news_id IN (SELECT MAX(breaking_news_id) AS Expr1 FROM breaking_news_master AS breaking_news_master_1))"></asp:SqlDataSource>
+    </td>
+    </tr>
+    <tr height="480" valign="top">
+    <td width="120">
+        <asp:DataList ID="DataList1" runat="server" DataKeyField="cat_id" DataSourceID="SqlDataSourceCategoryMaster">
+            <ItemTemplate>
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl='<%# Eval("cat_id","Default.aspx?id={0}") %>'
+                    SkinID="MenuLinks" Text='<%# Eval("cat_title") %>'></asp:HyperLink>
+            </ItemTemplate>
+        </asp:DataList>
+        <br />
+        <asp:HyperLink ID="HyperLink2" runat="server" 
+            NavigateUrl="~/admin/Default2asd.aspx">Admin Login</asp:HyperLink>
+        <asp:SqlDataSource ID="SqlDataSourceCategoryMaster" runat="server"
+            ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [cat_id], [cat_title] FROM [category_master]">
+        </asp:SqlDataSource>
+    </td>
+    <td width="510">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </td>
+    <td width="120">
+        <asp:AdRotator ID="AdRotator1" runat="server" AlternateTextField="alternate_text"
+            DataSourceID="SqlDataSourceAdMaster" Height="480px" ImageUrlField="image_url"
+            NavigateUrlField="navigate_url" Width="120px" />
+        <asp:SqlDataSource ID="SqlDataSourceAdMaster" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+            SelectCommand="SELECT [image_url], [navigate_url], [alternate_text] FROM [ad_master]">
+        </asp:SqlDataSource>
+    </td>
+    </tr>
+    <tr height="10">
+    <td colspan="3">
+    <UC:Footer ID="lblfooter" runat="server" />
+    </td>
+    </tr>
+    </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,102 @@
+
+>>>>>News Table<<<<<
+
+CREATE TABLE news(
+news_id INT NOT NULL AUTO_INCREMENT,
+title VARCHAR(50) NOT NULL,
+details VARCHAR(200) NOT NULL,
+start_date DATE NOT NULL,
+end_date DATE,
+primary key(news_id));
+
+
+
+>>>>>>Feedback<<<<<<
+
+CREATE TABLE feedback(
+f_id INT NOT NULL AUTO_INCREMENT,
+name VARCHAR(20),
+ca_number INT(10),
+contact INT(10),
+email VARCHAR(30),
+query VARCHAR(100),
+f_date DATE,
+primary key(f_id));
+
+
+>>>>>>Customer_info<<<<<<<<
+
+CREATE TABLE customer_info(
+name VARCHAR(20) NOT NULL,
+ca_number INT(10) NOT NULL,
+landline INT(10) NOT NULL,
+mobile INT(12) NOT NULL,
+email VARCHAR(30) NOT NULL,
+address VARCHAR(100),
+reg_date DATE,
+PRIMARY KEY(ca_number));
+
+>>>>>>Bill<<<<<<<<<<<
+CREATE TABLE bill(
+bill_id INT NOT NULL AUTO_INCREMENT,
+ca_number INT(10) NOT NULL,
+landline INT(10) NOT NULL,
+bill_date DATE,
+call_charge DOUBLE,
+plan INT(10),
+service_tax DOUBLE,
+total_bill DOUBLE,
+due_date DATE,
+status varchar(10),
+PRIMARY KEY(bill_id));
+
+
+
+
+
+
+
+>>>>>Customer_Login<<<<<<<
+
+CREATE TABLE customer_login(
+ca_number INT(10) NOT NULL,
+password VARCHAR(10) NOT NULL,
+question VARCHAR(150),
+answer VARCHAR(50),
+PRIMARY KEY(ca_number));
+
+
+
+
+
+>>>>Admin_Login<<<<
+
+CREATE TABLE admin_login(
+username varchar(10) NOT NULL,
+password VARCHAR(10) NOT NULL,
+PRIMARY KEY(username));
+
+INSERT INTO admin_login(username,password) value('premlal','prem123');
+
+
+
+>>>>>Payment Info<<<<<<
+CREATE TABLE payment_info(
+ca_number INT(10) NOT NULL,
+bank VARCHAR(50),
+cardno INT(20),
+cardname VARCHAR(50),
+expire VARCHAR(20),
+cvv INT(5)
+);
+
+
+>>>>>>>>>>>>Transactions<<<<<<<<<<<<<<<
+CREATE TABLE transactions(
+t_id INT NOT NULL AUTO_INCREMENT,
+ca_number INT(10) NOT NULL,
+bill_id INT(10),
+amount DOUBLE,
+card_no INT(20) NOT NULL,
+date DATE,
+PRIMARY KEY(t_id));

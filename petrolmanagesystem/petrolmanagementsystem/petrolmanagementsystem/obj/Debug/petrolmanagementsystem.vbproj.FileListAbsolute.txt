@@ -1,0 +1,4 @@
+C:\SuYoG !!!\Project Work\Comp Projects\Petrol Pump Management\petrolmanagesystem\petrolmanagementsystem\petrolmanagementsystem\bin\Debug\petrolmanagementsystem.exe.config
+C:\SuYoG !!!\Project Work\Comp Projects\Petrol Pump Management\petrolmanagesystem\petrolmanagementsystem\petrolmanagementsystem\obj\Debug\petrolmanagementsystem.exe
+C:\SuYoG !!!\Project Work\Comp Projects\Petrol Pump Management\petrolmanagesystem\petrolmanagementsystem\petrolmanagementsystem\obj\Debug\petrolmanagementsystem.xml
+C:\SuYoG !!!\Project Work\Comp Projects\Petrol Pump Management\petrolmanagesystem\petrolmanagementsystem\petrolmanagementsystem\obj\Debug\petrolmanagementsystem.pdb

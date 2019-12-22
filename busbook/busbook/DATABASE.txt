@@ -1,0 +1,195 @@
+create database BusBooking;
+
+
+create table login((staff_id varchar(10),brid varchar(10)) primary key,brname varchar(20),role varchar(10)); 
+
+select * from login;
+create table branch(brid varchar(10) primary key,brname varchar(20));
+create table service(srno varchar(10)primary key,routename varchar(20),fare money,vehcleno varchar(10));
+create table busdetails(srno varchar(10) foreign key references  service,nofseats numeric,strtime varchar(10));
+create table resdetails(rid varchar(10) primary key,srno varchar(10) foreign key references service,seatsresv numeric,dated datetime,custname varchar(20),phno varchar(10)); alter table service add brid varchar(10) foreign key references branch;alter table busdetails add brid varchar(10) foreign key references branch;alter table resdetails add brid varchar(10) foreign key references branch;
+create table extratkt(brid varchar(10) foreign key references,extraseats numeric,routename varchar(10) foreign key references service,vehno varchar(10) foreign key references vehdetails,dated datetime);
+select * from branch;
+select * from login;
+select * from service;
+select * from busdetails;
+select * from resdetails;
+select * from vehdetails;
+select * from extratkt;
+
+insert into login values('H001','hyd','stafmngr');
+insert into login values('V001','vij','stafmngr');
+insert into login values('B001','bng','stafmngr');
+insert into login values('C001','chn','stafmngr');
+insert into login values('M001','mum','stafmngr');
+insert into login values('A001','admin','admin');
+select * from login;
+
+use BusBooking;
+create table branchdets(brid varchar(10) foreign key references
+branch,dated datetime,srno varchar(10) foreign key references
+service,bid varchar(10) foreign key references vehdetails,
+seatsallot numeric)
+
+select * from branch;
+select * from service;
+select * from vehdetails;
+
+select * from branchdets;
+
+alter table branchdets add seatsresv numeric;
+
+insert into branchdets values('hyd','05-03-2007','100','1',3,0);
+insert into branchdets values('hyd','05-03-2007','101','2',40,0);
+insert into branchdets values('hyd','05-03-2007','200','3',3,0);
+insert into branchdets values('hyd','05-03-2007','201','4',40,0);
+insert into branchdets values('hyd','05-03-2007','300','5',3,0);
+insert into branchdets values('hyd','05-03-2007','301','6',40,0);
+insert into branchdets values('hyd','05-03-2007','400','7',3,0);
+insert into branchdets values('hyd','05-03-2007','401','8',40,0);
+
+insert into branchdets values('bng','05-03-2007','100','1',3,0);
+insert into branchdets values('bng','05-03-2007','101','2',3,0);
+insert into branchdets values('bng','05-03-2007','200','3',3,0);
+insert into branchdets values('bng','05-03-2007','201','4',3,0);
+insert into branchdets values('bng','05-03-2007','300','5',3,0);
+insert into branchdets values('bng','05-03-2007','301','6',3,0);
+insert into branchdets values('bng','05-03-2007','400','7',40,0);
+insert into branchdets values('bng','05-03-2007','401','8',3,0);
+
+insert into branchdets values('chn','05-03-2007','100','1',3,0);
+insert into branchdets values('chn','05-03-2007','101','2',3,0);
+insert into branchdets values('chn','05-03-2007','200','3',3,0);
+insert into branchdets values('chn','05-03-2007','201','4',3,0);
+insert into branchdets values('chn','05-03-2007','300','5',40,0);
+insert into branchdets values('chn','05-03-2007','301','6',3,0);
+insert into branchdets values('chn','05-03-2007','400','7',3,0);
+insert into branchdets values('chn','05-03-2007','401','8',3,0);
+
+
+insert into branchdets values('mum','05-03-2007','100','1',3,0);
+insert into branchdets values('mum','05-03-2007','101','2',3,0);
+insert into branchdets values('mum','05-03-2007','200','3',40,0);
+insert into branchdets values('mum','05-03-2007','201','4',3,0);
+insert into branchdets values('mum','05-03-2007','300','5',3,0);
+insert into branchdets values('mum','05-03-2007','301','6',3,0);
+insert into branchdets values('mum','05-03-2007','400','7',3,0);
+insert into branchdets values('mum','05-03-2007','401','8',3,0);
+
+insert into branchdets values('vij','05-03-2007','100','1',40,0);
+insert into branchdets values('vij','05-03-2007','101','2',3,0);
+insert into branchdets values('vij','05-03-2007','200','3',3,0);
+insert into branchdets values('vij','05-03-2007','201','4',3,0);
+insert into branchdets values('vij','05-03-2007','300','5',3,0);
+insert into branchdets values('vij','05-03-2007','301','6',3,0);
+insert into branchdets values('vij','05-03-2007','400','7',3,0);
+insert into branchdets values('vij','05-03-2007','401','8',3,0);
+
+select routename from service,vehdetails where service.srno=vehdetails.srno and brid
+
+select * from branchdets;
+
+
+create view staffdetails AS
+select b.brid,b.dated,b.seatsallot,
+b.seatsresv,s.routename,v.vehno
+from branchdets b,vehdetails v,service  s
+ where s.srno=b.srno  and b.bid=v.bid
+
+select * from branch
+select * from vehdetails
+select * from Service
+select * from branchdets
+
+create view stafftable as
+select br.bname,b.dated,s.routename,v.vehno,
+b.seatsallot,b.seatsresv,s.fare*b.seatsresv as amount
+from branchdets b,vehdetails v,service s,branch br
+ where s.srno=b.srno  and b.bid=v.bid and b.brid=br.brid
+
+select * from stafftable;
+select * from stafftable where bname='hyderabad'
+select * from branch;
+select * from login;
+select routename from service;
+update branchdets set seatsresv=0 where brid='vij';
+select bname from branch where brid in(select brid from login where staff_id='H001')
+select * from stafftable where bname='hyderabad'
+
+select distinct dated from stafftable where bname='hyderabad'
+select * from stafftable where dated=distinct dated 
+
+
+select distinct dated from stafftable where bname='hyderabad'
+
+select * from stafftable where bname='hyderabad' and dated='2007-01-03 00:00:00.000'
+
+select * from resdetails;
+
+select v.strtime from service s,vehdetails v 
+where s.srno in (select srno from service where routename='vij-hyd') and
+s.srno=v.srno
+
+select v.vehno from service s,vehdetails v 
+where s.srno in (select srno from service where routename='vij-hyd') and
+s.srno=v.srno
+
+select fare from service  
+where routename='vij-hyd'
+
+select srno from service where routename='vij-hyd';
+
+select seatsallot from branchdets where brid='hyd' and dated='02-03-2007' and srno='100' ;
+
+select seatsallot-seatsresv as seatsavl from branchdets 
+where srno=(select srno from service where routename='vij-hyd')
+and brid='hyd' and dated='02-03-2007';
+
+select * from branchdets
+
+select seatsallot from branchdets where brid='hyd' and dated='02-03-2007' and srno='200';
+
+select brid from login where staff_id='H001'
+
+select * from resdetails;
+update  resdetails set rid=1 where custname='saritha';
+
+
+insert into branch values('hyd','hyderabad');
+insert into branch values('bng','banglore');
+insert into branch values('chn','chennai');
+insert into branch values('mum','mumbai');
+insert into branch values('vij','vijayawada');
+select * from branch;
+
+
+create table service(srno varchar(10)primary key,routename 
+varchar(20),fare money,vehcleno varchar(10));
+insert into service values('100','vij-hyd',520,'AP-9B3424','vij');
+insert into service values('101','hyd-vij',520,'AP-3S7342','vij');
+insert into service values('200','mum-hyd',930,'AP-4H8453','vij');
+insert into service values('201','hyd-mum',930,'AP-7G2543','vij');
+insert into service values('300','chn-hyd',1100,'AP-11A9345','vij');
+insert into service values('301','hyd-chn',1100,'AP-2U3412','vij');
+insert into service values('400','bng-hyd',1000,'AP-9E6329','vij');
+insert into service values('401','hyd-bng',1000,'AP-10T3847','vij');
+select * from service;
+
+
+
+create table vehdetails(bid varchar(10) primary key,srno varchar(10) foreign key references service,vehno varchar(20),strtime varchar(20));
+alter table vehdetails add noofseats numeric;
+ drop table busdetails;
+
+insert into vehdetails values('1',100,'AP9B3424','8AM',50);
+insert into vehdetails values('2',101,'AP3S7342','3PM',50);
+insert into vehdetails values('3',200,'AP4H8453','7AM',50);
+insert into vehdetails values('4',201,'AP7G2543','9AM',50);
+insert into vehdetails values('5',300,'AP11A9345','7AM',50);
+insert into vehdetails values('6',301,'AP2U3412','9AM',50);
+insert into vehdetails values('7',400,'AP9E6329','7AM',50);
+insert into vehdetails values('8',401,'AP10T3847','9AM',50);
+
+
+
+insert into resdetails values('111',100,2,'10-02-2007','saritha','24355');

@@ -1,0 +1,66 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Adminmaster.master.cs" Inherits="adminpanel_Adminmaster" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Home Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #form1
+        {
+            width: 972px;
+            margin-left: 4px;
+        }
+        </style>
+
+</head>
+<body style="background-image: url('file:///C:/Documents and Settings/sarvum/Desktop/18-03-2011/Mobile Shope 3/../images_1/modern-background-design.jpg')">
+<form id="form1" runat="server" method="post"  >
+ <asp:Image ID="Image1" runat="server" Width="100%" Height="100px" 
+        ImageUrl="~/images/imgblak.jpg" />
+      <center>    
+         <asp:Menu ID="admenu" runat="server" Orientation="Horizontal" Font-Bold="True" 
+                 Font-Size="Large" >
+                        <StaticMenuItemStyle ItemSpacing="20px" />                        
+                        <Items> 
+                            <asp:MenuItem NavigateUrl="~/adminpanel/Adminhome.aspx" Text="Home" 
+                                Value="Home" ></asp:MenuItem>
+                            <asp:MenuItem Text="Category" Value="Category">
+                                <asp:MenuItem NavigateUrl="~/adminpanel/addcategory.aspx" Text="Add Category" 
+                                    Value="Add Category"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/adminpanel/Managecategory.aspx" 
+                                    Text="Manage Category" Value="Add Product"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Product" Value="Product">
+                                <asp:MenuItem NavigateUrl="~/adminpanel/addproduct.aspx" Text="Add Product" 
+                                    Value="Add Product"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/adminpanel/Manageproduct.aspx" 
+                                    Text="Manage Product" Value="Manage Product"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Branch" Value="Branch">
+                                <asp:MenuItem NavigateUrl="~/adminpanel/addbranch.aspx" Text="Add Branch" 
+                                    Value="Add Branch"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/adminpanel/Managebranch.aspx" Text="Manage Branch" 
+                                    Value="Manage Branch"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Feedback" Value="Feedback" 
+                                NavigateUrl="~/adminpanel/showfeedback.aspx"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/adminpanel/Default.aspx" Text="Logout" 
+                                Value="Logout"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/adminpanel/Manage register.aspx" Text="Register" 
+                                Value="Register"></asp:MenuItem>
+                        </Items>
+                    </asp:Menu>
+                    </center>
+        <table width="100%">
+                <tr><td align="right">
+                        <asp:HyperLink ID="hlchpassword" runat="server" 
+                            NavigateUrl="~/adminpanel/Changepassword.aspx">Change Password</asp:HyperLink>
+                </td></tr>
+        </table>
+                    <br /><br /><br /><br />
+          <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+          </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

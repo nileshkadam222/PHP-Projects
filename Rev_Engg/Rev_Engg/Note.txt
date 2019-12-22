@@ -1,0 +1,2 @@
+Before running the project make sure you have visual studio 2008 and above. 
+Also set Environment path variable appended with jdk1.6 bin folder. 

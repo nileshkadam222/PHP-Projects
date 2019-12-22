@@ -1,0 +1,23 @@
+<?php
+$link=mysql_connect('localhost','root','');
+$db=mysql_select_db('boutique',$link);
+$d=$HTTP_GET_VARS['val'];
+if($d==1)
+{
+	$q=mysql_query("delete from tmp_table");
+}
+else
+{
+	$d=$HTTP_GET_VARS['id'];
+	mysql_query("delete from tmp_table where sr_no=$d");
+	$row=mysql_query("select * from tmp_table order by sr_no");
+	$n=mysql_num_rows($row);
+	$i=1;
+	while($d=mysql_fetch_array($row))
+	{
+		mysql_query("update tmp_table set sr_no=$i where sr_no=$d[0]");
+		$i=$i+1;
+	}
+}
+header("Location:cart.php");
+?>

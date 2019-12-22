@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<flash_parameters>
+    <preferences>
+        <global>
+            <basic_property movieWidth="484" movieHeight="402" html_title="Title" loadStyle="Bar" startAutoPlay="true" continuum="true" backgroundColor="0x002780" hideAdobeMenu="false" photoDynamicShow="true" enableURL="true" transitionArray="" frameColor="0xffffff"/>
+            <title_property showTitle="false" photoTitleColor="0x000080"/>
+            <music_property path="" stream="true" loop="true"/>
+            <photo_property topPadding="0" bottomPadding="30" leftPadding="0" rightPadding="0"/>
+            <properties enable="true" backgroundColor="0xffffff" backgroundAlpha="30" cssText="a:link{text-decoration: underline;} a:hover{color:#ff0000; text-decoration: none;} a:active{color:#0000ff;text-decoration: none;} .blue {color:#0000ff; font-size:15px; font-style:italic; text-decoration: underline;} .body{color:#ff5500;font-size:20px;}" align="top"/>
+        </global>
+        <thumbnail>
+            <basic_property autoHide="false" width="70" height="50" alpha="70" borderColor="0xffffff"/>
+        </thumbnail>
+    </preferences>
+    <album>
+        <slide jpegURL="thumbs/t_0001.jpg" d_URL="slides/p_0001.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="450airbus" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0002.jpg" d_URL="slides/p_0002.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="33169_1227273958" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0003.jpg" d_URL="slides/p_0003.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="82549" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0004.jpg" d_URL="slides/p_0004.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="1680554971_8cc75c08c2" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0005.jpg" d_URL="slides/p_0005.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="a380_bar" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0006.jpg" d_URL="slides/p_0006.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="a380-airbus" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0007.jpg" d_URL="slides/p_0007.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="airbus (1)" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0008.jpg" d_URL="slides/p_0008.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="airbus" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0009.jpg" d_URL="slides/p_0009.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="airbus_a380" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0010.jpg" d_URL="slides/p_0010.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="airbus_a380_interior" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0011.jpg" d_URL="slides/p_0011.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="airbusa38007" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0012.jpg" d_URL="slides/p_0012.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="airbus-a380-interior" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0013.jpg" d_URL="slides/p_0013.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="airbus-a380-panorama" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0014.jpg" d_URL="slides/p_0014.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="airbusbedpa_468x299" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0015.jpg" d_URL="slides/p_0015.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="business_landing" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0016.jpg" d_URL="slides/p_0016.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="CSeries interior-thumb-800x600" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0017.jpg" d_URL="slides/p_0017.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Pic2(29)" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0018.jpg" d_URL="slides/p_0018.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="Singapore_Airlines_A380_Economy_Class_Entertainment_gallery__470x312" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0019.jpg" d_URL="slides/p_0019.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="united-airlines-first-class-suite2" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0020.jpg" d_URL="slides/p_0020.jpg" transition="0" panzoom="1" URLTarget="0" phototime="2" url="" title="virgin-airlines-interior-2" width="484" height="372"/>
+        <slide jpegURL="thumbs/t_0021.jpg" d_URL="slides/p_0021.jpg" transition="29" panzoom="1" URLTarget="0" phototime="10" url="http://www.photo-flash-maker.com/" title="Powered by Photo Flash Maker" width="484" height="372"/>
+    </album>
+</flash_parameters>

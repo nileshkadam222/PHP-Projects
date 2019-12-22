@@ -1,0 +1,19 @@
+<?php
+session_start();
+$link=mysql_connect('localhost','root','');
+$db=mysql_select_db('boutique');
+$usernm=$HTTP_GET_VARS['uname'];
+$pass=$HTTP_GET_VARS['pass'];
+$r=mysql_query("select * from admin where adminid='$usernm' and password='$pass'");
+$data=mysql_fetch_array($r);
+if($data)
+{
+	$_SESSION['user']=$usernm;
+	$_SESSION['pass']=$pass;	
+	header("Location:main.php");
+}
+else
+{
+	header("Location:index.php");
+}
+?>

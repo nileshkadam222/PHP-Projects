@@ -1,0 +1,92 @@
+div.Image
+{
+    position: absolute;
+    height:auto;
+    width: 300px;
+}
+#discount
+{
+    text-align: center;
+    height:60px;
+    width:60px;
+    margin-top:-340px;
+    background-size: 60px 60px;
+    background-image:url('../BookStore/discount.png');
+}
+#image
+{
+    height:300px;
+    width:230px;
+    margin-top:40px;
+    margin-left:40px;
+    background-size: 230px 300px;
+    background-image:url('../BookStore/ugc-net.png');
+}
+div.BookInfo
+{
+    padding-top: 40px;
+    position: absolute;
+    margin-left: 310px;
+    height:auto;
+    width: 500px;
+    /*background-color:green;*/
+}
+div.Bynow
+{
+    position: absolute;
+    margin-left: 820px;
+    height:auto;
+    width: 280px;
+    /*background-color: ;*/
+}
+div.ViewDetails
+{
+    position: absolute;
+    font-size:20px;
+    color:blue;
+    margin:380px auto auto 40px;
+}
+div.BookDetails
+{
+    padding:10px 20px;
+    position: absolute;
+    margin:410px auto auto 40px;
+    height:auto;
+    width:980px;
+    box-shadow:0px 0px 10px silver;
+    background-color:white;
+}
+#buy-now
+{
+    margin:20px 30px;
+    background-image:url('../Images/buy-now.png');
+    border-radius:15px;
+    height:50px;
+    width:180px;
+    box-shadow:0px 3px 5px #888888;
+}
+#add-to-wishlist
+{
+    margin:0px 30px;
+    background-image:url('../Images/add-to-wishlist.png');
+    border-radius:10px;
+    height:40px;
+    width:180px;
+    box-shadow:0px 3px 5px #888888;
+}
+#check-pincode
+{
+    background-color:#ddd;
+    padding:5px;
+    width:120px;
+}
+#buy-now:hover ,#add-to-wishlist:hover
+{
+    box-shadow:0px 0px 5px #888888;
+    cursor: pointer;
+}
+#buy-now:active ,#add-to-wishlist:active
+{
+    position: relative;
+    top:1px;
+}

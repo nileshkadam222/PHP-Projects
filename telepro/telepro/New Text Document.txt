@@ -1,0 +1,25 @@
+<html>
+<head>
+</HEAD>
+
+ <BODY>
+<span style="font-weight:bold;font-size:18px;font-family:Lucida sans;color:#333333;">
+Latest News 
+</span>
+<div id="marqueecontainer" onMouseover="copyspeed=pausespeed" onMouseout="copyspeed=marqueespeed">
+<div id="vmarquee" style="position: absolute; width: 98%;">
+
+<!--SCROLL CONTENT HERE-->
+
+
+<p><a href="#" style="color:#00CC00">Now All Calls @60paisa/min<img src="./images/new.gif" /></a>
+<p><a href="#" style="color:#00CC00">Installations charges waived off</a>
+<p><a href="#" style="color:#00CC00">Talk Unlimited @Rs600/month</a>
+<p><a href="#" style="color:#00CC00">One India plan<img src="./images/new.gif" /></a>
+
+<!--SCROLL CONTENT HERE-->
+
+</div>
+</div>
+ </BODY>
+</HTML>

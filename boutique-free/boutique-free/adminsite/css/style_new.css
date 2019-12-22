@@ -1,0 +1,254 @@
+body { margin:0px; padding:0px; color:#000000; }
+table { font:11px arial, tahoma, verdana; color:#000000; }
+form { margin:0px; padding:0px; }
+ul { margin:0px; padding:0px; list-style:none; }
+img { border:none; }
+a { color: #0066cc; text-decoration: underline; font-weight:normal; }
+a:hover { color: #000000; text-decoration: underline; font-weight:normal; }
+h1 { font:1.6em arial, tahoma, verdana; color:#ff9900; padding:10px 0px 3px 20px; margin:0px; }
+h2 { font:normal 1.6em arial, tahoma, verdana; color:#ffffff; padding:3px 0px 7px 10px; margin:0px; background: url(../images/heading_arrow.gif) no-repeat 0% 40%; }
+h3 { font:bold 1.5em arial, tahoma, verdana; color:#4e4e4e; padding:5px; margin:0px; }
+
+/*** H3 class is already in css. it's for profile page "Orange Title" ***/
+/*H3 {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; MARGIN: 0px; FONT: bold 1.5em arial, tahoma, verdana; COLOR: #4e4e4e; PADDING-TOP: 5px
+}*/
+h4 { font:bold 1.5em arial, tahoma, verdana; color:#000000; padding:5px; margin:0px; }
+
+.h_line { background: url(../images/h_line.gif) repeat-x 0% 50%; }
+.v_line { background: url(../images/v_line.gif) repeat-y left top; }
+.footer_bg { background: url(../images/footer_bg.gif) repeat-x 0% 0%; }
+.topmenu_border { background: url(../images/topmenu_pipe.gif) no-repeat 100% 50%; }
+.menubg { background-color:#2c85d9; color:#ffffff; }
+.box_top_bg { background: url(../images/box_top_bg.gif) repeat-x; }
+.box_bottom_border { border-bottom:1px solid #d3d3d5; }
+.box_top_border{ border-top:1px solid #d3d3d5; }
+.box_left_border { border-left:1px solid #d3d3d5; }
+.box_right_border { border-right:1px solid #d3d3d5; }
+.img_border img { border:1px solid #cccccc; padding:1px; }
+.graytext { color:#666666; }
+.whitetext { color:#ffffff; }
+.padding { padding:5px; }
+.padding1 { padding:10px; }
+.bigborder { border:5px solid #cdcdcd; padding:1px; }
+.lineheight { line-height:150%; }
+
+a.topmenu:link, a.topmenu:active, a.topmenu:visited { color:#666666; font-weight:normal; text-decoration:none; }
+a.topmenu:hover { color:#000000; font-weight:normal; text-decoration:none; }
+
+a.submenu:link, a.submenu:active, a.submenu:visited { color:#ffffff; font-weight:normal; text-decoration:none; }
+a.submenu:hover { color:#ffffff; font-weight:normal; text-decoration:underline; }
+
+a.footermenu:link, a.footermenu:active, a.footermenu:visited { color:#000000; font-weight:normal; text-decoration:none; }
+a.footermenu:hover { color:#000000; font-weight:normal; text-decoration:underline; }
+
+input, textarea, select { font:11px arial, tahoma, verdana; color:#000000; }
+.textbox { border:1px solid #b7b7b7; background:#ffffff; }
+.textbox75 { width:75px; border:1px solid #b7b7b7; background:#ffffff; }
+.textbox100 { width:100px; border:1px solid #b7b7b7; background:#ffffff; }
+.textbox150 { width:150px; border:1px solid #b7b7b7; background:#ffffff; }
+.textbox200 { width:200px; border:1px solid #b7b7b7; background:#ffffff; }
+.textarea { border:1px solid #b7b7b7; background:#ffffff;}
+.button1 { border:1px solid #b7b7b7; background: url(../images/but_bg.gif) repeat-x 0% 0% #ffffff; font-weight:bold; padding:2px; color:#4C4C4C; cursor:pointer}
+
+
+
+.errmsg{
+	font-family:verdana;
+	font-size:10px;
+	color:red;
+}
+
+/* New Class Of ErrorDisplaying
+*/
+.errmsg_heading { padding:5px; border:1px solid #e3d19b; background:#f6eac8; font-family:verdana; font-size:10px; color:red; text-align:center; }
+
+.formHighlight {
+        background-color: #e5ecf9;
+        background-position: left top;
+        border:1px solid #b7b7b7;;
+        padding-bottom: 10px;
+        margin-bottom: 5px; padding-left:7px; padding-right:7px; padding-top:7px
+}
+.hr{
+	height: 10px;
+	border-style: solid;
+	border-width:10px;
+	border-color: #f2f2f2;	
+}
+.hr1{
+	border-style: solid;
+	border-color :#CCCCCC;
+	height:1px;
+}
+.grayhr{
+	height:2px;
+	width:100%;
+	border-color:#e3e3e3;
+	border-style:solid;
+}
+.subheading{
+	font-family:verdana;
+	font-size:12px;
+	font-weight:bold;
+}
+.heading{
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; MARGIN: 0px; FONT: bold 1.5em arial, tahoma, verdana; COLOR: #4e4e4e; PADDING-TOP: 5px;
+}
+a.heading{
+	color: #0066cc;
+	PADDING-RIGHT: 5px; 
+	PADDING-LEFT: 5px; 
+	PADDING-BOTTOM: 5px; 
+	MARGIN: 0px; 
+	FONT: bold 1.0em arial, tahoma, verdana; 
+	PADDING-TOP: 5px;
+	text-decoration:none;
+}
+a.heading:hover{
+	color:#000000;
+	text-decoration:underline;
+	FONT: bold 1.0em arial, tahoma, verdana; 
+}
+.heading_space{
+	 FONT: bold 1.1em arial, tahoma, verdana; COLOR: #4e4e4e;
+}
+.tableSubTitle{
+	font-family:verdana;
+	font-size:18px;
+	font-weight:bold;
+}
+ul.cloud li {display: inline; list-style-type: none; margin:0 5px;}
+ul.cloud {padding:0; margin:0;}
+
+a.tags{
+	color: #0066cc; text-decoration: none; font-weight:normal; font-size:16px; 
+}
+a.tags:hover{
+	color: #000000; text-decoration: underline; font-weight:normal; 	
+}
+a.boldtags{
+	color: #0066cc; text-decoration: none; font-weight:bold; font-size:20px; 
+}
+a.boldtags:hover{
+	color: #000000; text-decoration: underline; font-weight:bold; font-size:20px; 	
+}
+
+a.news{
+	color: #0066cc; text-decoration: underline; font-weight:bold; font-size:14px; 
+}
+a.news:hover{
+	text-decoration:underline; font-weight:bold;
+}
+.newstitle{
+	color: #0066cc; text-decoration: none; font-weight:bold; font-size:14px; 
+}
+p{
+	text-align:justify;
+}
+
+a.nav:link, a.nav:active, a.nav:visited{
+	color:#666666;
+	font-size:12px;
+	text-decoration:none;
+	font-weight:bolder;	
+}
+a.nav:hover{
+	text-decoration:underline;
+	font-weight:bold;
+}
+
+/*****Third category heading *****/
+
+.cat_sub_heading { padding:5px; border:1px solid #ebebeb; background: url(../images/gray_bg.gif) repeat-x left bottom #FFFFFF; }
+
+/*****Third category heading end *****/
+
+/*** For Category heading ***/
+
+.cat_heading { padding:5px; font-weight:bold; border-bottom:1px solid #d3d3d5; background: url(../images/cat_heading.gif) repeat-x left top #f8f8ec; }
+
+.cat_box { border:1px solid #d3d3d5; }
+.cat_box_not_top_border { border-bottom:1px solid #d3d3d5; border-right:1px solid #d3d3d5; border-left:1px solid #d3d3d5; }
+
+/**** End Category Heading ****/
+.graybg_light{
+	background-color:#f1f1f1;
+	border:1px solid #e3e3e3;
+	padding:5px;
+}
+.graybg_dark{
+	background-color:#e3e3e3;
+	border:1px solid #e3e3e3;
+	padding:5px;
+}
+.active{
+	border-top:1px solid #d3d3d5;
+	border-right:1px solid #d3d3d5;
+	border-left:1px solid #d3d3d5;
+	background-color:#FFFFFF;
+}
+.notactive{
+	border: 1px solid #e3e3e3;
+	background: url(../images/gray_bg.gif) repeat-x left bottom #ffffff;
+}
+.mboard_date{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	font-weight:bold;
+}
+
+/*Forum's Border cLass*/
+
+.bbottom{
+	border-bottom:1px #cccccc solid;
+}
+.fbd{
+	border:1px #cccccc solid;
+}
+.fbdright{
+	border-right: 1px #cccccc solid;
+}
+.fbdlight{
+	border:1px #eeeeee solid;
+}
+
+/* This Class is for background-color in all pages */
+
+.bodybg{
+	background-color:#EFF2F3;
+}
+
+
+/*This class is for background-color in all tables first heading row */
+
+.tblheading{
+	background-color:#EEEEF7;
+}
+
+/* class for main table */
+
+.maintable{
+	background-color:#FFFFFF;
+}
+.bdbottom{
+	border-bottom:1px solid #CCCCCC;
+}
+a.vdotitle{
+	color: #0066cc; text-decoration: none; font-weight:bold; font-size:14px; 
+}
+a.vdotitle:hover{
+	color: #000000; text-decoration: underline; font-weight:bold; font-size:14px; 	
+}
+
+/*Karmunity class */
+.kinactive{
+	border:1px solid #d3d3d5;
+	background-color:#FFFFFF;
+}
+.kactive{
+	border-top:1px solid #d3d3d5;
+	border-right:1px solid #d3d3d5;
+	border-left:1px solid #d3d3d5;
+	background-color:#EEEEF7;
+}

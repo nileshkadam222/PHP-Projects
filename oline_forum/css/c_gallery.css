@@ -1,0 +1,60 @@
+#cgallery {
+
+	margin-top:-19px;
+	width:700px;
+	float:left;
+
+}
+
+#cgallery ul {
+	
+	margin-bottom:190px; 
+	padding: 0; 
+	list-style: none;
+}
+
+#cgallery ul li {
+	background-color:#fff; 
+	position: relative; 
+	display: block; 
+	float: left; 
+	width: 110px; 
+	margin:6px;; 
+	padding: 6px;
+	border-radius:3px;
+	border: 1px solid #9F0;
+	box-shadow:0 0 5px 0 #2A1F00;
+	 transition:box-shadow .6s ease;
+   -o-transition:box-shadow .6s ease;
+   -moz-transition:box-shadow .6s ease;
+   -webkit-transition:box-shadow .6s ease;
+}
+#cgallery ul li:hover {
+	background-color:#FC6; 
+	border: 1px solid #ccc;
+	box-shadow:0 0 25px 0 #2A1F00; 
+	 transition:box-shadow .6s ease;
+   -o-transition:box-shadow .6s ease;
+   -moz-transition:box-shadow .6s ease;
+   -webkit-transition:box-shadow .6s ease; }
+#cgallery ul li a{ text-decoration:none;}
+#cgallery ul li a:hover{ color:#00DFFF}
+#cgallery ul li a img {
+	width:107px; 
+	border: 1px solid #9C0; 
+	margin-bottom: 5px; 
+}
+
+#cgallery ul li  span {
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	width: 100px;
+	height: 24px;
+	text-align: center;
+	background: url(../images/tooplate_lp_btn.png);
+}
+
+#cgallery ul li span a {
+	color: #fff;
+}

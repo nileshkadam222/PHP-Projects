@@ -1,0 +1,15 @@
+D:\School\ASPX\Bin\BLL.dll
+D:\School\ASPX\Bin\BLL.pdb
+D:\School\API\BLL\BLL\obj\Debug\ResolveAssemblyReference.cache
+D:\School\API\BLL\BLL\obj\Debug\BLL.dll
+D:\School\API\BLL\BLL\obj\Debug\BLL.pdb
+D:\School\API\API\BLL\obj\Debug\ResolveAssemblyReference.cache
+D:\School\ASPX\School\Bin\BLL.dll
+D:\School\ASPX\School\Bin\BLL.pdb
+D:\School\API\API\BLL\obj\Debug\BLL.dll
+D:\School\API\API\BLL\obj\Debug\BLL.pdb
+D:\School\API\API\BLL\obj\Debug\BLL.csproj.GenerateResource.Cache
+D:\School\API\API\BLL\obj\Debug\BLL.dll.licenses
+D:\School\API\API\BLL\obj\Debug\BLL.ExamsReport.resources
+D:\School\API\API\BLL\obj\Debug\BLL.MarksReport.resources
+D:\School\API\API\BLL\obj\Debug\BLL.FinalMarksReport.resources

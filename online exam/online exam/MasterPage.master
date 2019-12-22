@@ -1,0 +1,304 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id =  "HEAD1" runat="server" >
+
+<title> </title>
+
+   
+   
+    
+    
+    <style type="text/css">
+        .style1
+        {
+            width: 800px;
+            height: 700px;
+        }
+         .style2
+        {
+            width: 150px;
+            height: 650px;
+        }
+         .style4
+        {
+            width:800px;
+            height: 200px;
+          
+        }
+        .style6
+        {
+            width :150px;
+            height: 50px;
+        }
+        .style7
+        {
+            width:500px;
+            height: 50px;
+        }
+         .style8
+        {
+            width:500px;
+            height: 700px;
+        }
+        .style9
+        {
+            width: 506px;
+            height: 50px;
+            background-color: #FFCCFF;
+        }
+        .style10
+        {
+            height: 50px;
+            width:25%;
+        }
+        .style11
+        {
+            width: 800px;
+            height:200px;
+        }
+        .style12
+        {
+            width: 400px;
+            height:200px;
+        }
+        .style13
+        {
+            width: 500px;
+            height: 836px;
+        }
+         .style18
+        {
+            width: 150px;
+            height: 50px;
+        }
+        .style19
+        {
+            width: 150px;
+            height: 700px;
+        }
+        .style20
+        {
+            width: 150px;
+            height: 700px;
+        }
+           .style22
+        {
+            width: 140px;
+            height:233px;
+        }
+           .style24
+        {
+            width: 100%;
+            height: 278px;
+        }
+        .style25
+        {
+            width: 100%;
+            height: 30px;
+        }
+        .style26
+        {
+        	width:33%;
+        	height:30px;
+        }
+        .style27
+        {
+            width: 176px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    
+    <div>
+    <table class="style9" align="center" cellpadding="0" cellspacing="0"  style="z-index: 103; left: 4px; position: absolute; top: 6px; width: 1291px; background-color: #ffffff;" >
+            <tr>
+                <td class="style4" colspan="3" align="center" style="height: 159px">
+                    <table cellpadding="0" cellspacing="0" class="style11">
+                        <tr>
+                            
+                            <td class="style12" align="center" style="height: 156px">
+                                &nbsp;
+                                <asp:Image ID="Image1" runat="server" Style="z-index: 100; left: 0px; position: absolute;
+                                    top: 3px" Height="212px" ImageUrl="~/Image/gg.GIF" Width="1267px" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="style18" style="background-color:#ffff33; color: #0099cc; font-weight: bold; font-size: large; text-transform: uppercase; font-style: italic; font-family: 'Comic Sans MS'; font-variant: small-caps; text-decoration: underline; width: 150px; height: 50px;">
+                                                      WELCOME</td>
+                <td class="style8" align="center" rowspan="2" style="background-image: url(Image/background-clip-art-green.jpg)">
+                    <asp:Label ID="Label3" runat="server" BackColor="#FFFF80" Font-Names="Comic Sans MS"
+                        Font-Size="Medium" ForeColor="#00C000" Height="28px" Style="z-index: 100; left: 520px;
+                        position: absolute; top: 282px" Text="Stud Login" Width="100px"></asp:Label>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <asp:Label ID="Label1" runat="server" BackColor="#FFFF80" Font-Names="Comic Sans MS"
+                            Font-Size="Medium" ForeColor="#00C000" Height="22px" Style="z-index: 100; left: 267px;
+                            position: absolute; top: 282px" Text="HOME" Width="61px"></asp:Label>
+                        <asp:ImageButton ID="ImageButton10" runat="server" Height="47px" ImageUrl="~/Image/h.jpg"
+                            Style="z-index: 101; left: 399px; position: absolute; top: 226px" OnClick="ImageButton10_Click" />
+                        <asp:Label ID="Label2" runat="server" BackColor="#FFFF80" Font-Names="Comic Sans MS"
+                            ForeColor="#00C000" Height="25px" Style="z-index: 103; left: 391px; position: absolute;
+                            top: 283px" Text="ADMIN" Width="63px"></asp:Label>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </asp:ContentPlaceHolder>
+                    <asp:Label ID="Label4" runat="server" BackColor="#FFFF80" Font-Names="Comic Sans MS"
+                        Font-Size="Medium" ForeColor="#00C000" Height="28px" Style="z-index: 101; left: 677px;
+                        position: absolute; top: 285px" Text="Log In Problem?" Width="131px"></asp:Label>
+                    <asp:ImageButton ID="ImageButton11" runat="server" Height="37px" ImageUrl="~/Image/stdlg.JPG"
+                        Style="z-index: 102; left: 546px; position: absolute; top: 227px" OnClick="ImageButton11_Click1" />
+                    <asp:ImageButton ID="ImageButton4" runat="server" Height="39px" ImageUrl="~/Image/home_icon.gif"
+                        OnClick="ImageButton4_Click" Style="z-index: 103; left: 271px; position: absolute;
+                        top: 229px" Width="54px" />
+                    <asp:ImageButton ID="ImageButton12" runat="server" Height="44px" ImageUrl="~/Image/CAVQ3EJG.jpg"
+                        Style="z-index: 104; left: 712px; position: absolute; top: 223px" Width="55px" />
+                    <asp:ImageButton ID="ImageButton13" runat="server" Height="47px" ImageUrl="~/Image/CA4PI74P.jpg"
+                        Style="z-index: 105; left: 897px; position: absolute; top: 225px" Width="46px" OnClick="ImageButton13_Click" />
+                    <asp:Label ID="Label5" runat="server" Height="28px" Style="z-index: 107; left: 872px;
+                        position: absolute; top: 286px" Text="Feed Back" Width="98px" BackColor="#FFFF80" Font-Names="Comic Sans MS" ForeColor="#00C000"></asp:Label>
+                </td>
+                <td class="style18" style="background-color:#ffff33; color: #0099cc; font-weight: bold; font-size: medium; text-transform: uppercase; font-style: italic; font-family: 'Comic Sans MS'; font-variant: small-caps; text-decoration: underline; height: 50px;">
+                                                      WELCOME</td>        
+                                                      
+                      </tr>
+            <tr>
+                <td class="style2" style="background-color:#ff9900; color: #ff99ff; width: 150px; height: 637px;">
+                
+                                 <table class="style19" align="center" cellpadding="2" >
+                        <tr>
+                            <td align="center" style="width: 155px; height: 338px;">
+                                <asp:LinkButton ID="LinkButton4" runat="server" Font-Names="Comic Sans MS" Font-Size="Medium"
+                                    ForeColor="#00C000" Style="z-index: 100; left: 16px; position: absolute; top: 418px"
+                                    Width="167px" OnClick="LinkButton4_Click">Rules & Regulation</asp:LinkButton>
+                                <asp:ImageButton ID="ImageButton3" runat="server" Height="101px" ImageUrl="~/Image/exm.jpg"
+                                    Style="z-index: 101; left: 51px; position: absolute; top: 313px" Width="108px" OnClick="ImageButton3_Click" />
+                                <asp:LinkButton ID="LinkButton5" runat="server" Font-Names="Comic Sans MS" Font-Size="Medium"
+                                    ForeColor="#00C000" OnClick="LinkButton5_Click" Style="z-index: 102; left: 13px;
+                                    position: absolute; top: 542px" Width="158px">Why Ranksheet?</asp:LinkButton>
+                                &nbsp;
+                               
+                                <asp:ImageButton ID="ImageButton5" runat="server" Height="101px" ImageUrl="~/Image/ggf.jpg"
+                                    OnClick="ImageButton5_Click" Style="z-index: 103; left: 35px; position: absolute;
+                                    top: 575px" Width="115px" />
+                                &nbsp;&nbsp;
+                                <asp:LinkButton ID="LinkButton6" runat="server" BackColor="#FFFF80" Font-Bold="True"
+                                    Font-Names="Comic Sans MS" Font-Size="Large" ForeColor="#00C000" OnClick="LinkButton6_Click"
+                                    Style="z-index: 105; left: 1123px; position: absolute; top: 359px">MERIT*</asp:LinkButton>
+                                &nbsp;
+                                &nbsp; &nbsp;
+                            </td>
+                          
+                        </tr>
+                        <tr>
+                            <td align="center" style="width: 155px">
+                                <asp:ImageButton ID="ImageButton2" runat="server" Style="z-index: 100; left: 45px;
+                                    position: absolute; top: 448px" Height="85px" ImageUrl="~/Image/rulesAndRegulationsIcon.gif" Width="104px" OnClick="ImageButton2_Click" />
+                                &nbsp; &nbsp;
+                                <asp:HyperLink ID="HyperLink2" runat="server" Height="168px" ImageUrl="~/Image/CAIF256L.jpg"
+                                    Style="z-index: 102; left: 1129px; position: absolute; top: 736px" Width="119px">HyperLink</asp:HyperLink>
+                            </td>
+                          
+                        </tr>
+                        </table>
+                    <asp:LinkButton ID="LinkButton7" runat="server" Font-Names="Comic Sans MS" Font-Size="Medium"
+                        ForeColor="#00C000" Style="z-index: 100; left: 55px; position: absolute; top: 710px" OnClick="LinkButton7_Click">About Us</asp:LinkButton>
+                    <asp:ImageButton ID="ImageButton9" runat="server" Height="83px" ImageUrl="~/Image/imagesCACQ7Y42.jpg"
+                        Style="z-index: 103; left: 31px; position: absolute; top: 778px" Width="120px" OnClick="ImageButton9_Click1" />
+                    &nbsp;
+                    </td>
+                <td class="style2" style="background-color:#ff9900; height: 637px;">
+                    <asp:HyperLink ID="HyperLink1" runat="server" ImageUrl="~/Image/imagesCAORP0F1.jpg"
+                        Style="z-index: 103; left: 1105px; position: absolute; top: 527px">HyperLink</asp:HyperLink>
+                    &nbsp;&nbsp;
+                    <asp:Label ID="Label6" runat="server" Font-Names="Comic Sans MS" Font-Size="Medium"
+                        ForeColor="#00C000" Style="z-index: 101; left: 1122px; position: absolute; top: 458px"
+                        Text="Reference" Width="91px"></asp:Label>
+                    <asp:Label ID="Label7" runat="server" Font-Names="Comic Sans MS" Font-Size="Medium"
+                        ForeColor="#00C000" Style="z-index: 102; left: 1137px; position: absolute; top: 667px"
+                        Text="Reference" Width="91px"></asp:Label>
+                 </td>
+            </tr>
+                <tr>
+                 
+                </tr>                   
+            <tr>
+                <td class="style6" style="background-color:#99cccc; color: #0099cc; font-weight: bold; font-size: medium; width: 150px; font-style: italic; font-family: 'Comic Sans MS'; font-variant: small-caps; text-decoration: underline;">
+                     CAREER 4 U</td>
+                <td class="style7"></td>
+                 <td class="style6" style="background-color:#99cccc; color: #0099cc; font-weight: bold; font-size: medium; width: 150px; font-style: italic; font-family: 'Comic Sans MS'; font-variant: small-caps; text-decoration: underline;">
+                     CAREER 4 U</td>
+               
+            </tr>            
+        </table>
+           
+            <table class="style2" align="center" cellpadding="0" cellspacing="0" >
+           
+                    <tr>
+   
+                        
+                            <td align="center" class="style10">
+                                <asp:ImageButton ID="ImageButton6" runat="server" Height="50px" 
+                                    ImageUrl="" Width="100%" />
+                            </td>
+                            <td align="center" class="style10">
+                                <asp:ImageButton ID="ImageButton7" runat="server" Height="50px" 
+                                    ImageUrl="" Width="100%" />
+                            </td>
+                        </tr>
+                            <tr>
+                            </tr>
+                            <td align="center" class="style7">
+                                &nbsp;</td>
+                            <td align="center" class="style7">
+                                
+                            </td>
+                      
+                    </table>
+                       
+                 <td class="style9" style="background-color:#999999"> career 4 u
+                 
+                       </td>
+                               
+                  
+            
+                  
+                       
+        <asp:LinkButton ID="LinkButton1" runat="server" Style="z-index: 100; left: 23px;
+            position: absolute; top: 308px">LinkButton</asp:LinkButton>
+        <asp:LinkButton ID="LinkButton2" runat="server" Style="z-index: 101; left: 23px;
+            position: absolute; top: 349px">LinkButton</asp:LinkButton>
+        <asp:LinkButton ID="LinkButton3" runat="server" Font-Names="Comic Sans MS" Font-Size="Large"
+            ForeColor="#00C000" Style="z-index: 104; left: 32px; position: absolute; top: 289px" OnClick="LinkButton3_Click">Examination Section</asp:LinkButton>
+                               
+                  
+            
+                  
+                       
+      </div>
+    </form>
+</body>
+</html>
